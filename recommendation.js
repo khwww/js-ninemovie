@@ -1,5 +1,5 @@
 const API_KEY = `af4e249f208fd13fc96bb460a631d94a`;
-let popularMovieList = [];
+let popularPost = [];
 
 
 const getPopularMovie = async() => {
@@ -11,7 +11,8 @@ const getPopularMovie = async() => {
 
     const response = await fetch(url);
     const popularData = await response.json();
-    console.log("rrr",popularData.results);
+    popularPost = popularData.results;   //데이터 뿌려주기.  전역변수(global variable)로 할당해줬다
+    console.log("DDD",popularPost);
 };
 
 
