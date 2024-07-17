@@ -25,8 +25,11 @@ const renderPopular = () => {
       
         <div class="carousel-item ${index === 0 ? 'active' : ''}" class="d-block w-100" alt="${movie.title}">
           <img
-            src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}"
+            src="https://image.tmdb.org/t/p/original/${movie.backdrop_path}"
             class="d-block w-100" alt="${movie.title}">
+               <div>
+      <h2>${movie.original_title}</h2>
+      </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
         data-bs-slide="prev">
@@ -38,6 +41,7 @@ const renderPopular = () => {
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+   
         
      
     `).join('');
