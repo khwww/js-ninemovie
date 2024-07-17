@@ -121,6 +121,7 @@ svg {
   border: none;
   color: #fff;
   font-size: 20px;
+  cursor: pointer;
 }
 
 /* hide-- */
@@ -139,11 +140,17 @@ svg {
   gap: 5px;
   margin: 0;
 }
+h2 {
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
 .movie img {
   display: block;
   max-width: 200px;
   height: auto;
-  margin: 0;
+  margin: 10px;
 }
 .swiper-container {
   width: 100%;
@@ -153,12 +160,20 @@ svg {
 .swiper-container {
   display: flex;
 }
+.swiper-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .swiper-slide {
+  display: flex;
   flex: 0 0 auto;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .swiper-left,
 .swiper-right {
