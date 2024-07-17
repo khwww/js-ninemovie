@@ -5,7 +5,6 @@ const API_URL = BASE_URL + `discover/movie?sort_by=popularity.desc&`+ API_KEY;
 const IMG_URL = `https://image.tmdb.org/t/p/w500`;
 const categorySlide = document.getElementById('category-slide');
 
-
 getMovies(API_URL);
 
 function getMovies(url) {
@@ -16,18 +15,46 @@ function getMovies(url) {
 }
 
 function showMovies(data) {
-  categorySlide.innerHTML = '';
+  categorySlide.innerHTML = '<div class="swiper-wrapper"></div>';
+  const swiperWrapper = categorySlide.querySelector('.swiper-wrapper');
 
   data.forEach(movie => {
     const {title, poster_path} = movie;
     const movieEl = document.createElement('div');
-    movieEl.classList.add('movie');
+    movieEl.classList.add('swiper-slide', 'movie');
     movieEl.innerHTML = `
         <img src="${IMG_URL+poster_path}" alt="${title}">${title}
         `
-    categorySlide.appendChild(movieEl);
-  })
+        swiperWrapper.appendChild(movieEl);
+  });
+  initializeSwiper();
 }
+
+
+function initializeSwiper() {
+  const slides = document.querySelectorAll('.swiper-container .swiper-slide');
+  const slidesCount = slides.length;
+
+  let slidesPerView = 10; //한번에 보여줄 슬라이드 개수
+  let slidesPerGroup = 1; //한번에 이동할 슬라이드 개수
+
+  if (slidesCount < slidesPerView) {
+    slidesPerView = slidesCount;
+    slidesPerGroup = slidesCount;
+  }
+
+  new Swiper('.swiper-container', {
+    slidesPerView: slidesPerView,
+    slidesPerGroup: slidesPerGroup,
+    spaceBetween: 10,
+    loop: slidesCount >= slidesPerView,
+    navigation: {
+      prevEl: '.swiper-icon-left',
+      nextEl: '.swiper-icon-right'
+    }
+  });
+}
+
 
 //NavBar  
 const openNav = () => {
@@ -39,12 +66,13 @@ const closeNav = () => {
 }
 
 //Swiper
-new Swiper('.swiper-container.movies-container', {
-  slidesPerView: 10, 
-  spaceBetween: 10,
-  loop: true,
-  navigation: {
-    prevEl: 'swiper-left',
-    nextEl: '.swiper-right'
-  }
-});
+
+// new Swiper('.swiper-container.movies-container', {
+//   slidesPerView: 10, 
+//   spaceBetween: 10,
+//   loop: true,
+//   navigation: {
+//     prevEl: 'swiper-left',
+//     nextEl: '.swiper-right'
+//   }
+// });
