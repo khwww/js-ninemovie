@@ -1,6 +1,4 @@
-body {
-    background-color: black;
-}
+
 .popular-img {
     position:relative;
     max-height: 80vh;
@@ -36,7 +34,16 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
-    right: 0;
-   
-  
-  }
+    right: 0;   
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+}

@@ -19,7 +19,7 @@ const getPopularMovie = async () => {
 
 const renderPopular = () => {
   let popularHTML = ``;
-
+  let indicatorsHTML = '';
   //보여줄 데이터 가져오기
   popularHTML = popularPostList.map((movie, index) =>
 
@@ -45,8 +45,13 @@ const renderPopular = () => {
         <span class="visually-hidden">Next</span>
       </button> `).join('');
 
+      indicatorsHTML = popularPostList.map((_, index) => `
+        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Slide ${index + 1}"></button>
+    `).join('');
+
 
   document.querySelector('.carousel-inner').innerHTML = popularHTML;
+  document.querySelector('.carousel-indicators').innerHTML = indicatorsHTML;
 }
 
 getPopularMovie();
