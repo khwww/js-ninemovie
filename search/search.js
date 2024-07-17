@@ -65,14 +65,3 @@ const closeNav = () => {
   document.getElementById("topnav").style.display = 'none';
 }
 
-//Swiper
-
-// new Swiper('.swiper-container.movies-container', {
-//   slidesPerView: 10, 
-//   spaceBetween: 10,
-//   loop: true,
-//   navigation: {
-//     prevEl: 'swiper-left',
-//     nextEl: '.swiper-right'
-//   }
-// });
