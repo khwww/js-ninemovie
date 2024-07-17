@@ -1,4 +1,4 @@
-const API_KEY = `af4e249f208fd13fc96bb460a631d94a`;
+const API_KEY = config.apikey;
 let popularPostList = [];
 
 
