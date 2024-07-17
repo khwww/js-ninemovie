@@ -1,0 +1,126 @@
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  color: white;
+  background-color: black;
+}
+
+/* 찜 목록 */
+#wishlist {
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* 찜 목록 - 제목 */
+#wishlist h1 {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(46, 46, 46);
+}
+
+/* 카테고리 선택, 편집 버튼 */
+.wishlist-select-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-select-list {
+  display: flex;
+  gap: 1em;
+}
+.wishlist-select-list button {
+  position: relative;
+  color: hsla(0, 0%, 100%, 0.5);
+  border: none;
+  background-color: transparent;
+}
+.wishlist-select-list button:hover,
+.wishlist-select-list button.active {
+  color: white;
+}
+.wishlist-select-list button:last-child {
+  padding-left: 1em;
+}
+.wishlist-select-list button:last-child::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 1rem;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.wishlist-select-button {
+  color: hsla(0, 0%, 100%, 0.5);
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  border-radius: 3px;
+  border: 1px solid rgb(78, 78, 78);
+  background-color: transparent;
+}
+.wishlist-select-button:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.wishlist-edit-area {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: center;
+}
+.wishlist-edit-inner {
+  display: none;
+  position: relative;
+  gap: 1em;
+  top: -2rem;
+  background-color: black;
+}
+
+/* 찜 리스트 */
+#wishlist-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8%;
+  margin-top: 1em;
+}
+.wishlist-item {
+  width: 16%;
+  transition: transform 0.3s ease;
+}
+.wishlist-item a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.wishlist-item-info {
+  color: hsla(0, 0%, 100%, 0.87);
+  font-size: 0.9rem;
+}
+.wishlist-item:hover {
+  transform: translateY(-10px);
+}
