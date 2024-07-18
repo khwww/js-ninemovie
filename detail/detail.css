@@ -95,3 +95,23 @@ h1 {
 .description {
   line-height: 1.6;
 }
+
+.videos {
+  padding: 20px;
+}
+
+.videos h2 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+#videoResults {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#videoResults iframe {
+  width: 300px;
+  height: 200px;
+}
