@@ -1,3 +1,8 @@
+/* 공통사항 나중에 지우기 */
+body {
+  background-color: black;
+}
+
 /* Navbar */
 .header {
   display: flex;
@@ -94,7 +99,7 @@ svg {
   position: absolute;
   background-color: black;
   color: #fff;
-  top: 10px;
+  top: 5px;
   right: 10px;
   font-size: 35px;
   font-weight: 700;
@@ -122,6 +127,14 @@ svg {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
+}
+/* inner 돋보기 */
+.search-open-icon {
+  background-color: black;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 /* hide-- */
@@ -196,4 +209,21 @@ h2 {
 .swiper-right {
   right: 50%;
   margin-left: -650px;
+}
+
+/* main */
+.movie-container {
+  width: 1400px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px auto;
+}
+.movie-container img {
+  width: auto;
+  margin-bottom: 30px;
+  height: 300px;
+  object-fit: cover;
 }

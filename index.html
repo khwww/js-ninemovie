@@ -35,7 +35,7 @@
           <div class="inner">
             <div class="inner-search">
               <input type="text" id="search-input" placeholder="제목, 인물명을 입력하세요">
-              <button class="fas fa-search icon-button search-open-icon"></button>
+              <button onclick="getMoviesByKeyword()" class="fas fa-search icon-button search-open-icon"></button>
             </div>
             <button class="closeBtn" onclick="closeNav()">&times;</button>
 
@@ -117,7 +117,16 @@
         </div>
       </div>
       
-      </section>
+    </section>
+
+    <main>
+
+      <div id="initial-movie-board" class="movie-container">
+        <img src="./img/movieImg.jpg" alt="movieImg">
+        <img src="./img/movieImg.jpg" alt="movieImg">
+      </div>
+
+    </main>
 
   </body>
 </html>
