@@ -143,15 +143,17 @@
 <section class="container movie-list-container">  
 
   
-    <h1 class="movie-list-title">최신영화</h1>
+    <h1 class="movie-list-title">인기 영화</h1>
     <div class="movie-list-wrapper">
-        <i class="fas fa-chevron-left arrow-left"></i>
+        <span id="left-arrow" class="arrow-left"> &lt;</span>
+        <!-- <i class="fas fa-chevron-left arrow arrow-left" id="left-arrow"></i> -->
         <div class=" movie-list">        
 
 <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
           
         </div>
-        <i class="fas fa-chevron-right arrow-right"></i>
+        <span id="right-arrow"  class="arrow-right">&gt;</span>
+       <!-- <div><i class="fas fa-chevron-right arrow " id="right-arrow"></i></div>  -->
     </div>
 
 </section>
@@ -162,6 +164,7 @@
     crossorigin="anonymous"></script>
     <script src="recommendation/popular-apikey.js"></script>
   <script src="recommendation/recommendation.js"></script>
+   <!-- <script src="recommendation/script2.js"></script> -->
 </body>
 
 </html>
