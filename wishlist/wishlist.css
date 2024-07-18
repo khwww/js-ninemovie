@@ -27,6 +27,21 @@ body {
   background-color: black;
 }
 
+/* 찜 목록 버튼 */
+.wishlist-button {
+  color: white;
+}
+.wishlist-button .hover-heart {
+  display: none;
+}
+
+.wishlist-button:hover .hover-heart {
+  display: inline;
+}
+.wishlist-button:hover .default-heart {
+  display: none;
+}
+
 /* 찜 목록 */
 .wishlist-area {
   padding: 2em 0;
