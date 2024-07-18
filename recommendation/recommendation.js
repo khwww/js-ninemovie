@@ -1,3 +1,4 @@
+
 const API_KEY = `af4e249f208fd13fc96bb460a631d94a`;
 
 let popularPostList = [];
@@ -5,10 +6,6 @@ let nowPlayingPostList = [];
 let trendingPostList = [];
 let currentIndex = 0;
 let scrollAmount = 0;
-
-
-let popularKey = " ";
-
 
 const getPopularMovie = async () => {
   const url = new URL(
@@ -146,11 +143,7 @@ const trendingMovieList = () => {
 }
 
 
-
-
 // 슬라이드 이동 기능 구현
-const leftArrow = document.getElementById('left-arrow');
-const rightArrow = document.getElementById('right-arrow');
 
 const handleScroll = (direction, listClass) => {
   const listElement = document.querySelector(listClass);
