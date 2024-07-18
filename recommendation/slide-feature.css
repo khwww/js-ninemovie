@@ -55,7 +55,7 @@ body {
   overflow: hidden;
 }
 
-.movie-list, .now-playing-movie-list, .trending-movie-list {
+.popular-movie-list, .now-playing-movie-list, .trending-movie-list {
   display: flex;
   align-items: center;
   height: 300px;

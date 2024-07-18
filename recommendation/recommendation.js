@@ -4,8 +4,11 @@ const API_KEY = `af4e249f208fd13fc96bb460a631d94a`;
 let popularPostList = [];
 let nowPlayingPostList = [];
 let trendingPostList = [];
-let currentIndex = 0;
-let scrollAmount = 0;
+let scrollStates = {
+  '.popular-movie-list': { scrollAmount: 0 },
+  '.now-playing-movie-list': { scrollAmount: 0 },
+  '.trending-movie-list': { scrollAmount: 0 }
+};
 
 const getPopularMovie = async () => {
   const url = new URL(
@@ -104,22 +107,20 @@ const movieListRecommend = () => {
   const movieRecommendHTML = popularPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">
-            
-          </div>
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+      </div>
 
 `).join('');
 
-  document.querySelector('.movie-list').innerHTML = movieRecommendHTML;
+  document.querySelector('.popular-movie-list').innerHTML = movieRecommendHTML;
 };
 
 const nowPlayingMovieList = () => {
   const movieNowPlayingHTML = nowPlayingPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">
-            
-          </div>
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+      </div>
 
 `).join('');
 
@@ -132,9 +133,8 @@ const trendingMovieList = () => {
   const movieTrendingHTML = trendingPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">
-            
-          </div>
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+      </div>
 
 `).join('');
 
@@ -145,21 +145,32 @@ const trendingMovieList = () => {
 
 // 슬라이드 이동 기능 구현
 
+
+
 const handleScroll = (direction, listClass) => {
   const listElement = document.querySelector(listClass);
   const scrollWidth = listElement.scrollWidth - listElement.clientWidth;
+  const currentScrollAmount = scrollStates[listClass].scrollAmount;
 
-  if (direction === 'right' && scrollAmount < scrollWidth) {
-    scrollAmount += 200;
-    listElement.style.transform = `translateX(-${scrollAmount}px)`;
-  } else if (direction === 'left' && scrollAmount > 0) {
-    scrollAmount -= 200;
-    listElement.style.transform = `translateX(-${scrollAmount}px)`;
+  if (direction === 'right' && currentScrollAmount < scrollWidth) {
+    scrollStates[listClass].scrollAmount += 200;
+    console.log("right", scrollStates[listClass].scrollAmount)
+    if (scrollStates[listClass].scrollAmount > scrollWidth) {
+      scrollStates[listClass].scrollAmount = scrollWidth;
+    }
+  } else if (direction === 'left' && currentScrollAmount > 0) {
+    scrollStates[listClass].scrollAmount -= 200;
+    console.log("left", scrollStates[listClass].scrollAmount)
+    if (scrollStates[listClass].scrollAmount < 0) {
+      scrollStates[listClass].scrollAmount = 0;
+    }
   }
+
+  listElement.style.transform = `translateX(-${scrollStates[listClass].scrollAmount}px)`;
 };
 
-document.getElementById('right-arrow-popular').addEventListener('click', () => handleScroll('right', '.movie-list'));
-document.getElementById('left-arrow-popular').addEventListener('click', () => handleScroll('left', '.movie-list'));
+document.getElementById('right-arrow-popular').addEventListener('click', () => handleScroll('right', '.popular-movie-list'));
+document.getElementById('left-arrow-popular').addEventListener('click', () => handleScroll('left', '.popular-movie-list'));
 document.getElementById('right-arrow-now-playing').addEventListener('click', () => handleScroll('right', '.now-playing-movie-list'));
 document.getElementById('left-arrow-now-playing').addEventListener('click', () => handleScroll('left', '.now-playing-movie-list'));
 document.getElementById('right-arrow-trending').addEventListener('click', () => handleScroll('right', '.trending-movie-list'));
