@@ -1,5 +1,6 @@
 const API_KEY = config.apikey;
 let popularPostList = [];
+let currentIndex = 0;
 
 
 const getPopularMovie = async () => {
@@ -15,6 +16,7 @@ const getPopularMovie = async () => {
   console.log("DDD", popularPostList);
 
   renderPopular();
+  movieListRecommend();
 };
 
 const renderPopular = () => {
@@ -46,12 +48,120 @@ const renderPopular = () => {
       </button> `).join('');
 
       indicatorsHTML = popularPostList.map((_, index) => `
-        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Slide ${index + 1}"></button>
-    `).join('');
-
+      <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-current="${index === 0 ? 'true' : 'false'}" aria-label="Slide ${index + 1}"></button>
+  `).join('');
 
   document.querySelector('.carousel-inner').innerHTML = popularHTML;
   document.querySelector('.carousel-indicators').innerHTML = indicatorsHTML;
 }
+
+// card 
+
+const movieListRecommend =() => {
+  let movieRecommendHTML ='';
+
+  movieRecommendHTML = popularPostList.map((movie) => 
+
+         ` <div class="movie-list-item">
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">
+            
+          </div>
+
+`).join('');
+
+ document.querySelector('.movie-list').innerHTML = movieRecommendHTML;
+
+ 
+};
+
+// Javascript 커스컴 슬라이더 기능 가져와 구현해보기
+// const arrow =() => {
+
+
+// }
+// const arrowLeft = document.querySelectorAll(".arrow-left");
+// const arrowRight = document.querySelectorAll(".arrow-right");
+
+// const movieLists = document.querySelectorAll(".movie-list");
+
+
+// // arrow right > button action
+// arrowRight.forEach((arrowR, i) => {
+//   const itemNumber = movieLists[i].querySelectorAll("img").length;
+//   let clickCounter1 = 0;
+//   arrowR.addEventListener("click", () => {
+//     const ratio = Math.floor(window.innerWidth / 200);
+//     clickCounter1++;
+//     if (itemNumber - (4 + clickCounter1) + (4 - ratio) >= 0) {
+//       movieLists[i].style.transform = `translateX(${
+//         movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
+//       }px)`;
+//     } else {
+//       movieLists[i].style.transform = "translateX(0)";
+//       clickCounter1 = 0;
+//     }
+//   });
+
+//   console.log(Math.floor(window.innerWidth / 200));
+// });
+
+
+
+// // arrow left < button action
+
+// arrowLeft.forEach((arrowL, i) => {
+//   const itemNumber = movieLists[i].querySelectorAll("img").length;
+//   let clickCounter2 = itemNumber;
+//   arrowL.addEventListener("click", () => {
+//     const ratio = Math.floor(window.innerWidth / 200);
+//     clickCounter2--;
+//     if (itemNumber - (4 + clickCounter2) + (4 - ratio) >= itemNumber) {
+//       movieLists[i].style.transform = `translateX(${
+//         movieLists[i].computedStyleMap().get("transform")[0].x.value -300
+//       }px)`;
+//     } else {
+//       movieLists[i].style.transform = "translateX(0)";
+//       clickCounter2 = 0;
+//     }
+//   });
+
+//   console.log(Math.floor(window.innerWidth / 200));
+// });
+
+
+
+//JavaScript로 커스텀 슬라이더 기능 구현하기
+// const moveCarousel = (direction) => {
+
+//   let arrow = popularPostList.map((movie) => {
+
+//     const carouselInner = 0;
+//     // document.querySelector('.movie-list');
+//     const totalItems = arrow;
+//     // document.querySelectorAll('.movie-list-item').length;
+//     const itemsPerView = 3; // 한 번에 보이는 카드 수
+  
+//     if (direction === 'next') {
+//         if (currentIndex < totalItems - itemsPerView) {
+//             currentIndex++;
+//         }
+//     } else if (direction === 'prev') {
+//         if (currentIndex > 0) {
+//             currentIndex--;
+//         }
+//     }
+  
+//     const translateX = -currentIndex * (100 / itemsPerView);
+//     carouselInner.style.transform = `translateX(${translateX}%)`;
+
+//   }
+ 
+// };
+
+// document.querySelector('.arrow-left').addEventListener('click', () => moveCarousel('next'));
+// document.querySelector('.arrow-right').addEventListener('click', () => moveCarousel('prev'));
+
+
+
 
 getPopularMovie();
