@@ -12,6 +12,12 @@ ol {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 button {
   cursor: pointer;
 }
@@ -22,7 +28,7 @@ body {
 }
 
 /* 찜 목록 */
-#wishlist {
+.wishlist-area {
   padding: 2em 0;
   display: flex;
   flex-direction: column;
@@ -30,7 +36,7 @@ body {
 }
 
 /* 찜 목록 - 제목 */
-#wishlist h1 {
+.wishlist-area h1 {
   padding-bottom: 1rem;
   border-bottom: 1px solid rgb(46, 46, 46);
 }
@@ -99,7 +105,7 @@ body {
 }
 
 /* 찜 리스트 */
-#wishlist-list {
+#wishlist {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8%;
@@ -113,9 +119,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
 }
 .wishlist-item-info {
   color: hsla(0, 0%, 100%, 0.87);

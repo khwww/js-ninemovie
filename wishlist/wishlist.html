@@ -17,12 +17,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./wishlist.css" />
+    <link rel="stylesheet" href="/wishlist/wishlist.css" />
   </head>
   <body>
-    <!-- 찜 목록 -->
+    <!-- 찜 목록 페이지 -->
     <div class="container">
-      <section id="wishlist">
+      <!-- TODO: 헤더 -->
+      <a class="wishlist-button" href="/wishlist/wishlist.html">
+        <i class="fa-regular fa-heart default-heart"></i>
+        <i class="fa-solid fa-heart hover-heart"></i>
+      </a>
+      <section class="wishlist-area">
         <h1 class="h1">찜 목록</h1>
         <!-- 카테고리 선택, 편집 버튼 -->
         <div class="wishlist-select-area">
@@ -53,22 +58,9 @@
             </div>
           </div>
         </div>
-        <!-- 찜 리스트 -->
-        <ul id="wishlist-list">
-          <li class="wishlist-item">
-            <a href="#">
-              <div class="wishlist-item-img">
-                <img
-                  class="img-fluid rounded"
-                  src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP0900/ko/20230712/P001734557.jpg/dims/resize/F_webp,400"
-                  alt=""
-                />
-              </div>
-              <div class="wishlist-item-info">
-                <p class="wishlist-item-title">복숭아 누르지 마시오</p>
-              </div>
-            </a>
-          </li>
+        <!-- 찜 목록 -->
+        <ul id="wishlist">
+          <!-- 찜한 영화 리스트 -->
         </ul>
       </section>
     </div>
@@ -78,6 +70,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./wishlist.js"></script>
+    <script src="/wishlist/wishlist.js"></script>
   </body>
 </html>
