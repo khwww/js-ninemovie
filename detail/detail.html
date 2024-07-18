@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NINE MOVIE</title>
+    <link rel="stylesheet" href="detail.css" />
+  </head>
+  <body>
+    <header>
+      <h4>NINE MOIVE</h4>
+      <nav>
+        <ul>
+          <li><a href="#">시리즈</a></li>
+          <li><a href="#">영화</a></li>
+          <li><a href="#">라이브</a></li>
+          <li><a href="#">KBO</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="content">
+        <div class="left">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg=="
+            alt="TVING Only"
+            class="tving-only"
+          />
+          <h1 id="movieTitle">영화 제목</h1>
+          <div class="details">
+            <span class="age" id="movieRating">평점</span>
+            <span class="time" id="releaseDate">개봉일</span>
+            <span class="category" id="movieCategory">장르</span>
+            <span class="channel">tvN</span>
+            <span class="season">시즌 1개</span>
+          </div>
+          <button class="watch-button">159화 시청하기</button>
+          <div class="creators" id="movieCrew"></div>
+          <!-- 감독정보 -->
+          <p class="description" id="movieOverview"></p>
+          <!-- 영화설명 -->
+        </div>
+
+        <div class="right">
+          <img id="moviePoster" src="tving.png" alt="영화 포스터" />
+        </div>
+      </section>
+    </main>
+    <script src="detail.js"></script>
+  </body>
+</html>
