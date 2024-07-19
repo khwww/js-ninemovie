@@ -4,10 +4,14 @@ const API_KEY = `af4e249f208fd13fc96bb460a631d94a`;
 let popularPostList = [];
 let nowPlayingPostList = [];
 let trendingPostList = [];
+let upcomingPostList = [];
+let topRatedPostList =[];
 let scrollStates = {
   '.popular-movie-list': { scrollAmount: 0 },
   '.now-playing-movie-list': { scrollAmount: 0 },
-  '.trending-movie-list': { scrollAmount: 0 }
+  '.trending-movie-list': { scrollAmount: 0 },
+  '.upcoming-movie-list': {scrollAmount: 0},
+  '.topRated-movie-list': {scrollAmount: 0}
 };
 
 const getPopularMovie = async () => {
@@ -65,6 +69,39 @@ const getTrendingMovie = async () => {
   }
 };
 
+const getUpcomingMovie = async () => {
+  const url = new URL(
+    `https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&api_key=${API_KEY}`
+  )
+  console.log("trending-url", url);
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    upcomingPostList = data.results;   //데이터 뿌려주기.  전역변수(global variable)로 할당해줬다
+    upcomingMovieList();
+    console.log("upcoming Data", upcomingPostList);
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+  }
+};
+
+const getTopRatedMovie = async () => {
+  const url = new URL(
+    `https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&api_key=${API_KEY}`
+  )
+  console.log("trending-url", url);
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    topRatedPostList = data.results;   //데이터 뿌려주기.  전역변수(global variable)로 할당해줬다
+    topRatedMovieList();
+    console.log("upcoming Data", topRatedPostList);
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+  }
+};
 
 const renderPopular = () => {
 
@@ -142,6 +179,32 @@ const trendingMovieList = () => {
 
 }
 
+const upcomingMovieList = () => {
+  const movieUpcomingHTML = upcomingPostList.map((movie) =>
+
+    ` <div class="movie-list-item">
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+      </div>
+
+`).join('');
+
+  document.querySelector('.upcoming-movie-list').innerHTML = movieUpcomingHTML;
+
+}
+
+const topRatedMovieList = () => {
+  const movieTopRatedHTML = topRatedPostList.map((movie) =>
+
+    ` <div class="movie-list-item">
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+      </div>
+
+`).join('');
+
+  document.querySelector('.topRated-movie-list').innerHTML = movieTopRatedHTML ;
+
+}
+
 
 // 슬라이드 이동 기능 구현
 
@@ -175,8 +238,41 @@ document.getElementById('right-arrow-now-playing').addEventListener('click', () 
 document.getElementById('left-arrow-now-playing').addEventListener('click', () => handleScroll('left', '.now-playing-movie-list'));
 document.getElementById('right-arrow-trending').addEventListener('click', () => handleScroll('right', '.trending-movie-list'));
 document.getElementById('left-arrow-trending').addEventListener('click', () => handleScroll('left', '.trending-movie-list'));
-
+document.getElementById('right-arrow-upcoming').addEventListener('click', () => handleScroll('right', '.upcoming-movie-list'));
+document.getElementById('left-arrow-upcoming').addEventListener('click', () => handleScroll('left', '.upcoming-movie-list'));
+document.getElementById('right-arrow-topRated').addEventListener('click', () => handleScroll('right', '.topRated-movie-list'));
+document.getElementById('left-arrow-topRated').addEventListener('click', () => handleScroll('left', '.topRated-movie-list'));
 
 getPopularMovie();
 getNowPlayingMovie();
 getTrendingMovie();
+getUpcomingMovie();
+getTopRatedMovie();
+
+
+
+
+
+// 메인페이지에 영화 카테고리 버튼 event 연결 DOM
+
+// 인기 영화 click event
+const titlePopular = document.querySelector(".popular-title");
+        titlePopular.addEventListener('click', () => )
+
+//지금 상영 영화 click event
+const titleNowPlaying = document.querySelector(".now-playing-title");
+        titleNowPlaying.addEventListener('click', () => )
+
+//트렌드 영화 click event
+const titleTrending = document.querySelector(".trending-title");
+        titleTrending.addEventListener('click', () => )
+
+//개봉예정 영화 click event
+const titleUpcomingPlaying = document.querySelector(".upcoming-title");
+        titleNowPlaying.addEventListener('click', () => )
+
+//높은평점 영화 click event
+const titleTopRated = document.querySelector(".topRated-title");
+        titleTrending.addEventListener('click', () => )
+
+

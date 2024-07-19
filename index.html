@@ -138,54 +138,86 @@
 
       </div>
   </section>
-  <section>
+  <section class="card-slider-section">
     <!--  card 커스턴 슬라이더 기능 구현하기 구역 -->
     <div class="container movie-list-container">
       <div>
-          <h1 class="movie-list-title">인기 영화</h1>
-          <div class="movie-list-wrapper">
-              <span id="left-arrow-popular" class="arrow-left">&lt;</span>
-              <div class="popular-movie-list">
-                  <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
-              </div>
-              <span id="right-arrow-popular" class="arrow-right">&gt;</span>
+        <h1 class="movie-list-title popular-title">인기 영화</h1>
+        <div class="movie-list-wrapper">
+          <span id="left-arrow-popular" class="arrow-left">&lt;</span>
+          <div class="popular-movie-list">
+            <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
           </div>
+          <span id="right-arrow-popular" class="arrow-right">&gt;</span>
+        </div>
       </div>
 
       <!-- </div>
 
   <div class="container movie-list-container"></div> -->
       <div>
-          <h1 class="movie-list-title">지금 상영 영화</h1>
-          <div class="movie-list-wrapper">
-              <span id="left-arrow-now-playing" class="arrow-left">&lt;</span>
-              <div class="now-playing-movie-list">
-                  <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
-              </div>
-              <span id="right-arrow-now-playing" class="arrow-right">&gt;</span>
+        <h1 class="movie-list-title now-playing-title">지금 상영 영화</h1>
+        <div class="movie-list-wrapper">
+          <span id="left-arrow-now-playing" class="arrow-left">&lt;</span>
+          <div class="now-playing-movie-list">
+            <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
           </div>
+          <span id="right-arrow-now-playing" class="arrow-right">&gt;</span>
+        </div>
       </div>
 
       <div>
-        <h1 class="movie-list-title">Trending</h1>
+        <h1 class="movie-list-title trending-title">트렌드 영화</h1>
         <div class="movie-list-wrapper">
-            <span id="left-arrow-trending" class="arrow-left">&lt;</span>
-            <div class="trending-movie-list">
-                <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
-            </div>
-            <span id="right-arrow-trending" class="arrow-right">&gt;</span>
+          <span id="left-arrow-trending" class="arrow-left">&lt;</span>
+          <div class="trending-movie-list">
+            <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
+          </div>
+          <span id="right-arrow-trending" class="arrow-right">&gt;</span>
         </div>
+      </div>
+
+      <div>
+        <h1 class="movie-list-title upcoming-title">개봉예정 영화</h1>
+        <div class="movie-list-wrapper">
+          <span id="left-arrow-upcoming" class="arrow-left">&lt;</span>
+          <div class="upcoming-movie-list">
+            <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
+          </div>
+          <span id="right-arrow-upcoming" class="arrow-right">&gt;</span>
+        </div>
+      </div>
+
+      <div>
+        <h1 class="movie-list-title topRated-title">높은평점 영화</h1>
+        <div class="movie-list-wrapper">
+          <span id="left-arrow-topRated" class="arrow-left">&lt;</span>
+          <div class="topRated-movie-list">
+            <!-- card 커스텀 JavaScript을 통해 동적으로 이미지 및 슬라이드 실행 영역 -->
+          </div>
+          <span id="right-arrow-topRated" class="arrow-right">&gt;</span>
+        </div>
+      </div>
+
     </div>
 
-  </div>
+    <!-- toggle -->
+
+    <div class="toggle">
+      <i class="fas fa-moon toggle-icon"></i>
+      <i class="fas fa-sun toggle-icon"></i>
+      <div class="toggle-ball"></div>
+    </div>
+
+    <!-- End toggle -->
     <!-- End of 슬라이드쇼 및 추천 콘텐츠 기능 -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
-    <script src="recommendation/popular-apikey.js"></script>
     <script src="recommendation/recommendation.js"></script>
-    <!-- <script src="recommendation/script2.js"></script> -->
+    <script src="recommendation/toggle.js"></script>
+
 </body>
 
 </html>
