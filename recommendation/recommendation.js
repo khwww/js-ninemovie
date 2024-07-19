@@ -248,31 +248,3 @@ getNowPlayingMovie();
 getTrendingMovie();
 getUpcomingMovie();
 getTopRatedMovie();
-
-
-
-
-
-// 메인페이지에 영화 카테고리 버튼 event 연결 DOM
-
-// 인기 영화 click event
-const titlePopular = document.querySelector(".popular-title");
-        titlePopular.addEventListener('click', () => )
-
-//지금 상영 영화 click event
-const titleNowPlaying = document.querySelector(".now-playing-title");
-        titleNowPlaying.addEventListener('click', () => )
-
-//트렌드 영화 click event
-const titleTrending = document.querySelector(".trending-title");
-        titleTrending.addEventListener('click', () => )
-
-//개봉예정 영화 click event
-const titleUpcomingPlaying = document.querySelector(".upcoming-title");
-        titleNowPlaying.addEventListener('click', () => )
-
-//높은평점 영화 click event
-const titleTopRated = document.querySelector(".topRated-title");
-        titleTrending.addEventListener('click', () => )
-
-
