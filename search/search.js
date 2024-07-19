@@ -8,6 +8,7 @@ const menus = document.querySelectorAll(".menus button");
 menus.forEach(menu=>menu.addEventListener("click",(event)=>getMoviesCategory(event)))
 
 
+
 //NavBar  
 const openNav = () => {
   document.getElementById("topnav").style.display = 'block';
