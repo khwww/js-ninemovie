@@ -63,7 +63,7 @@ nav ul li a {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 48px;
   margin: 0;
   margin-bottom: 20px;
 }
@@ -92,26 +92,90 @@ h1 {
   margin: 20px 0;
 }
 
+.creators p {
+  margin: 5px 0;
+}
+
 .description {
   line-height: 1.6;
 }
 
-.videos {
+.videos,
+.similar-movies,
+.reviews,
+.cast {
   padding: 20px;
 }
 
-.videos h2 {
+.videos h2,
+.similar-movies h2,
+.reviews h2,
+.cast h2 {
   margin: 0;
   margin-bottom: 20px;
 }
 
-#videoResults {
+#videoResults,
+#similarMovies,
+#movieReviews,
+#castList {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-#videoResults iframe {
+#videoResults iframe,
+.similar-movie img,
+.cast-member img {
   width: 300px;
   height: 200px;
+}
+
+.similar-movie,
+.cast-member {
+  display: inline-block;
+  text-align: center;
+}
+
+.similar-movie:hover {
+  position: relative;
+  bottom: 10px;
+}
+.similar-movie img {
+  transition: all 1s ease-in-out;
+  width: 200px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.arrow-left {
+  font-size: 120px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  color: white;
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.arrow-right {
+  font-size: 120px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  color: white;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.similar-movie h4,
+.cast-member h4 {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.cast-member {
+  width: 150px;
 }
