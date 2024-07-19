@@ -153,13 +153,13 @@ const handleScroll = (direction, listClass) => {
   const currentScrollAmount = scrollStates[listClass].scrollAmount;
 
   if (direction === 'right' && currentScrollAmount < scrollWidth) {
-    scrollStates[listClass].scrollAmount += 200;
+    scrollStates[listClass].scrollAmount += 300;
     console.log("right", scrollStates[listClass].scrollAmount)
     if (scrollStates[listClass].scrollAmount > scrollWidth) {
       scrollStates[listClass].scrollAmount = scrollWidth;
     }
   } else if (direction === 'left' && currentScrollAmount > 0) {
-    scrollStates[listClass].scrollAmount -= 200;
+    scrollStates[listClass].scrollAmount -= 300;
     console.log("left", scrollStates[listClass].scrollAmount)
     if (scrollStates[listClass].scrollAmount < 0) {
       scrollStates[listClass].scrollAmount = 0;
