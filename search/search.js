@@ -63,7 +63,7 @@ const getMoviesCategory = async (event) => {
 const renderInitial = () => {
   const moviesHTML = moviesList
     .map(
-      (movies) => ` <div class="movie">
+      (movies) => ` <div class="movie">      
                       <img src=${IMG_URL + movies.poster_path}>
                     </div>`
     )

@@ -144,7 +144,7 @@ const movieListRecommend = () => {
   const movieRecommendHTML = popularPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" onclick="movie-img-pop() alt="${movie.title}">            
       </div>
 
 `).join('');
@@ -156,7 +156,7 @@ const nowPlayingMovieList = () => {
   const movieNowPlayingHTML = nowPlayingPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" onclick="movie-img-pop() alt="${movie.title}">            
       </div>
 
 `).join('');
@@ -170,7 +170,7 @@ const trendingMovieList = () => {
   const movieTrendingHTML = trendingPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" onclick="movie-img-pop()" alt="${movie.title}">            
       </div>
 
 `).join('');
@@ -183,7 +183,7 @@ const upcomingMovieList = () => {
   const movieUpcomingHTML = upcomingPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" onclick="movie-img-pop() alt="${movie.title}">            
       </div>
 
 `).join('');
@@ -196,7 +196,7 @@ const topRatedMovieList = () => {
   const movieTopRatedHTML = topRatedPostList.map((movie) =>
 
     ` <div class="movie-list-item">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" alt="${movie.title}">            
+            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top movie-list-item-img" onclick="movie-img-pop() alt="${movie.title}">            
       </div>
 
 `).join('');
