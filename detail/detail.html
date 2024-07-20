@@ -16,10 +16,12 @@
             class="fas fa-search icon-button search-icon"
             onclick="openNav()"
           ></button>
-          <button
-            class="fa fa-heart icon-button favorite-icon"
-            onclick="favoriteIcon()"
-          ></button>
+          <a href="/wishlist/wishlist.html">
+            <button
+              class="fa fa-heart icon-button favorite-icon"
+              onclick="favoriteIcon()"
+            ></button>
+          </a>
         </div>
       </nav>
       <!-- Search Input 검색 기능 -->
@@ -60,7 +62,12 @@
             <span class="category" id="movieCategory">장르</span>
             <span class="category" id="movieRuntime">런닝타임</span>
           </div>
-          <button class="watch-button">시청하기</button>
+          <div>
+            <button class="watch-button">시청하기</button>
+            <div id="like-button-area">
+              <!-- 찜 버튼 -->
+            </div>
+          </div>
           <div class="creators">
             <p id="movieCrew"></p>
             <!-- 감독정보 -->
