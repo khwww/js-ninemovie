@@ -1,4 +1,5 @@
 const RECOMMENDATION_API_KEY = `af4e249f208fd13fc96bb460a631d94a`;
+const NINE_BASE_URL = 'https://api.themoviedb.org/3';  // 새로추가했음
 
 let popularPostList = [];
 let nowPlayingPostList = [];
@@ -15,7 +16,7 @@ let scrollStates = {
 
 const getPopularMovie = async () => {
   const url = new URL(
-    `https://api.themoviedb.org/3/movie/popular?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}`
+    `${NINE_BASE_URL}/movie/popular?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}` //Change url to variable
   );
   console.log("popular-url", url);
 
@@ -34,7 +35,7 @@ const getPopularMovie = async () => {
 
 const getNowPlayingMovie = async () => {
   const url = new URL(
-    `https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}`
+    `${NINE_BASE_URL}/movie/now_playing?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}` //Change url to variable
   );
   console.log("now-url", url);
 
@@ -51,7 +52,7 @@ const getNowPlayingMovie = async () => {
 
 const getTrendingMovie = async () => {
   const url = new URL(
-    `https://api.themoviedb.org/3/trending/movie/day?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}`
+    `${NINE_BASE_URL}/trending/movie/day?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}` //Change url to variable
   );
   console.log("trending-url", url);
 
@@ -68,7 +69,7 @@ const getTrendingMovie = async () => {
 
 const getUpcomingMovie = async () => {
   const url = new URL(
-    `https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}`
+    `${NINE_BASE_URL}/movie/upcoming?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}` //Change url to variable
   );
   console.log("trending-url", url);
 
@@ -85,7 +86,7 @@ const getUpcomingMovie = async () => {
 
 const getTopRatedMovie = async () => {
   const url = new URL(
-    `https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}`
+    `${NINE_BASE_URL}/movie/top_rated?language=ko-KR&api_key=${RECOMMENDATION_API_KEY}` //Change url to variable
   );
   console.log("trending-url", url);
 
