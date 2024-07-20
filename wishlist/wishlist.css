@@ -15,7 +15,8 @@
 
 /* 찜 목록 */
 .wishlist-area {
-  padding: 2em 0;
+  min-height: 70vh;
+  padding: 6em 0 2em;
   display: flex;
   flex-direction: column;
   gap: 1em;
