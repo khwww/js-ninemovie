@@ -111,12 +111,14 @@ a.logo {
 .inner-search {
   display: flex;
   align-items: center;
-  width: 300px;
+  width: 200px;
   margin: 0 auto;
 }
 #search-input {
   display: flex;
-  flex: 1;
+  /* flex: 1; */
+  justify-content: center;
+  margin: 0 auto;
   padding: 10px;
   font-size: 20px;
   color: #fff;
@@ -150,6 +152,7 @@ a.logo {
   display: flex;
   justify-content: center;
 }
+
 .movie {
   display: flex;
   justify-content: center;
@@ -165,19 +168,20 @@ h2 {
 }
 .movie img {
   display: block;
-  max-width: 200px;
   height: 270px;
-  margin: 10px;
+  max-width: 200px;
   border-radius: 20px;
+  margin: 10px;
 }
 .swiper-container {
   width: 100%;
   overflow: hidden;
   display: flex;
-  width: 100%;
-  overflow: hidden;
+}
+.searchSlide {
   display: flex;
 }
+
 /* Main */
 .movie-container {
   width: 1400px;
@@ -251,6 +255,7 @@ footer {
   height: 24px;
 }
 
+
 /* 20240720 수정 */
 /* 반응형 */
 @media (max-width: 1024px) {
@@ -292,13 +297,15 @@ footer {
 
 @media (max-width: 600px) {
   .navbar {
+    width: 600px;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     margin: 0 10px;
   }
   a.logo {
-    font-size: 25px;
+    font-size: 1em;
   }
   .navbar .menus button {
     font-size: 15px
@@ -317,10 +324,11 @@ footer {
     max-width: 100%; 
   }
   #search-input {
-    font-size: 18px;
+    font-size: 13px;
+    width: 200px;
   }
   .inner-search {
-    width: 400px;
+    width: 300px;
     margin-bottom: 50px;
   }
   .closeBtn {
@@ -330,7 +338,20 @@ footer {
   }
   #initial-movie-board {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    width: auto;
+    overflow: hidden;
+  }
+  #initial-movie-board .movie {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+
+  }
+  #initial-movie-board .movie img{
+    width: 400px;
+    height: auto;
+
   }
   #search-input:focus {
     outline: none;
