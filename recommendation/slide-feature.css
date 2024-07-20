@@ -15,13 +15,8 @@ body {
   top: -4px;
 }
 
-.popular-img-carousel {
-  position: relative;
-  max-height: 80vh;
-}
-
-.carousel-window {
-  margin-top: -90px;
+.movie-list-container{
+  margin-top: -120px;
 }
 
 .inner-title {
@@ -66,7 +61,7 @@ body {
 }
 
 .movie-list-container h1 {
-  color: black;
+  color: white;
 }
 
 .movie-list-wrapper {
@@ -92,14 +87,6 @@ body {
   position: relative;
   transition: transform 1s ease;
 }
-
-/* .now-playing-movie-list {
-  margin-right: 30px;
-  position: absolute;
-  left: 0;
-  top: 200px;
-  transition: transform 1s ease;
-} */
 
 .movie-list-item:hover .movie-list-item-img {
   position: relative;
@@ -144,65 +131,10 @@ body {
 
 
 
-
-/* Toggle temp */
-
-/* body {
-  background-color: black;
-} */
-
-
-/* .navbar {
-  width: 100%;
-  height: 50px;
-  background-color: black;
-  position: sticky;
-  top: 0;
-}
-
-.navbar-container {
-  display: flex;
-  align-items: center;
-  padding: 0 50px;
-  height: 100%;
-  color: white;
-  font-family: "Sen", sans-serif;
-}
-
-
-.toggle {
-  width: 40px;
-  height: 20px;
-  background-color: white;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: relative;
-}
-.toggle-icon {
-  color: goldenrod;
-}
-
-.toggle-ball {
-  width: 18px;
-  height: 18px;
-  background-color: black;
-  position: absolute;
-  right: 1px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 1s ease all;
-}
-
-.movie-list-container h1 {
-  color: white;
-} */
-
 /* 이희정님 파트 ccs 추가 */
 
 .main-movie-board {
   display: flex;
   justify-content: space-around;
-  /* margin-top: 50px; */
+  /* margin-top: 50px;  */
 }
