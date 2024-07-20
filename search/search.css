@@ -5,7 +5,7 @@
   background-color: black;
   position: fixed;
   top: 0;
-  z-index: 10; 
+  z-index: 10;
 }
 .navbar {
   display: flex;
@@ -16,16 +16,17 @@
   margin: 0 auto;
   position: relative;
 }
-.logo {
+a.logo {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
   color: rgb(207, 7, 7);
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 900;
   text-decoration: none;
   margin: 0 10px;
+  font-size: 30px;
 }
 .navbar .menus {
   display: flex;
@@ -101,7 +102,7 @@
   position: absolute;
   background-color: black;
   color: #fff;
-  top: 5px;
+  top: -180px;
   right: 10px;
   font-size: 35px;
   font-weight: 700;
@@ -123,6 +124,11 @@
   background-color: black;
   border-bottom: 2px solid #fff;
 }
+#search-input:focus {
+  outline: none;
+  background-color: black;
+}
+
 .inner-search .search-icon {
   background: none;
   border: none;
@@ -140,14 +146,11 @@
 }
 
 /* Movie list */
-.movies-container {
+#initial-movie-board {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  margin-top: 100px;
-  padding: 0;
+  justify-content: center;
 }
+
 .movie {
   display: flex;
   justify-content: center;
@@ -163,21 +166,28 @@ h2 {
 }
 .movie img {
   display: block;
-  max-width: 200px;
   height: 270px;
-  margin: 10px;
+  max-width: 200px;
   border-radius: 20px;
-  transition: all 1s ease-in-out;
+  margin: 10px;
+}
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.searchSlide {
+  display: flex;
 }
 
 /* Main */
 .movie-container {
   width: 1400px;
-  height: 100%;
   background-color: black;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  height: 100%;
   align-items: center;
   margin: 100px auto;
   z-index: 9999;
@@ -190,4 +200,143 @@ h2 {
 }
 .hidden {
   display: none;
+}
+
+/* Footer 스타일부분 */
+footer {
+  background-color: #000;
+  color: #888;
+  padding: 20px;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-top a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-top a:hover {
+  color: #fff; /* 마우스를 올릴 때 글자색을 흰색으로 변경 */
+}
+
+.footer-middle {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* 20240720 수정 */
+/* 반응형 */
+@media (max-width: 1024px) {
+  .top-menu {
+    width: 600;
+    height: 100%;
+  }
+  .top-menu .search-box {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    padding: 5px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 100%; 
+  }
+  #search-input {
+    font-size: 20px;
+  }
+  .inner-search {
+    width: 600px;
+    margin-bottom: 50px;
+  }
+  .closeBtn {
+    position: absolute;
+    top: -100px;
+    right: 100px;
+  }
+  #initial-movie-board {
+    display: flex;
+    justify-content: center;
+  }
+  #search-input:focus {
+    outline: none;
+    background-color: black;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+  }
+  a.logo {
+    font-size: 25px;
+  }
+  .navbar .menus button {
+    font-size: 15px
+  }
+  .navbar_right {
+    justify-content: flex-end;
+  }
+  .top-menu .search-box {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    padding: 5px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 100%; 
+  }
+  #search-input {
+    font-size: 18px;
+  }
+  .inner-search {
+    width: 400px;
+    margin-bottom: 50px;
+  }
+  .closeBtn {
+    position: absolute;
+    top: -100px;
+    right: 50px;
+  }
+  #initial-movie-board {
+    display: flex;
+    justify-content: center;
+  }
+  #search-input:focus {
+    outline: none;
+    background-color: black;
+  }
 }
