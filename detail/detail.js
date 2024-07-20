@@ -1,9 +1,9 @@
-const apiKey = "4e4f177acb805afedb5f5f64d33de73d";
+const detail_apiKey = "4e4f177acb805afedb5f5f64d33de73d";
 const youtubeApiKey = "AIzaSyCQKzBO4AtZ0_Fk7ViMJYWp1Ci2qzoQ8P4";
 const movieId = 557;
 
 async function fetchMovieDetails() {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=ko-KR`;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${detail_apiKey}&language=ko-KR`;
 
   try {
     const response = await fetch(url);
@@ -43,7 +43,7 @@ function displayMovieDetails(movie) {
 }
 
 async function fetchMovieCredits(movieId) {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=ko-KR`;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${detail_apiKey}&language=ko-KR`;
 
   try {
     const response = await fetch(url);
@@ -64,7 +64,7 @@ function displayMovieCrew(crew) {
 
 // 주요 출연진 정보를 가져오는 함수
 async function fetchMovieCast(movieId) {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=ko-KR`;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${detail_apiKey}&language=ko-KR`;
 
   try {
     const response = await fetch(url);
@@ -88,7 +88,7 @@ function displayMovieCast(cast) {
 
 // 관련 콘텐츠를 가져오는 함수
 async function fetchSimilarMovies(movieId) {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}&language=ko-KR`;
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${detail_apiKey}&language=ko-KR`;
 
   try {
     const response = await fetch(url);

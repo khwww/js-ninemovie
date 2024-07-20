@@ -36,6 +36,7 @@ nav ul li a {
 
 .content {
   display: flex;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
@@ -49,11 +50,12 @@ nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: -40px;
 }
 
 .right img {
-  max-width: 100%;
-  height: auto;
+  width: 320px;
+  height: 430px;
 }
 
 .tving-only {
@@ -100,6 +102,11 @@ h1 {
   line-height: 1.6;
 }
 
+.videos {
+  padding: 20px;
+  border-top: 2px solid #555;
+}
+
 .videos,
 .similar-movies,
 .reviews,
@@ -141,6 +148,7 @@ h1 {
   position: relative;
   bottom: 10px;
 }
+
 .similar-movie img {
   transition: all 1s ease-in-out;
   width: 200px;
@@ -178,4 +186,164 @@ h1 {
 
 .cast-member {
   width: 150px;
+}
+
+/* Footer 스타일부분 */
+footer {
+  background-color: #000;
+  color: #888;
+  padding: 20px;
+  text-align: left;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-top a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-top a:hover {
+  color: #fff; /* 마우스를 올릴 때 글자색을 흰색으로 변경 */
+}
+
+.footer-middle {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .right {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .right img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .details span {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .videos h2,
+  .similar-movies h2,
+  .reviews h2,
+  .cast h2 {
+    font-size: 24px;
+  }
+
+  #videoResults iframe,
+  .similar-movie img,
+  .cast-member img {
+    width: 100%;
+    height: auto;
+  }
+
+  .similar-movie img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cast-member {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .right img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .details span {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .videos h2,
+  .similar-movies h2,
+  .reviews h2,
+  .cast h2 {
+    font-size: 20px;
+  }
+
+  #videoResults iframe,
+  .similar-movie img,
+  .cast-member img {
+    width: 100%;
+    height: auto;
+  }
+
+  .similar-movie img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cast-member {
+    width: 100%;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+  }
+
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
 }
