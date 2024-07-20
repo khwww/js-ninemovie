@@ -140,14 +140,15 @@
 }
 
 /* Movie list */
-.movies-container {
+/* .movies-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
   margin-top: 100px;
   padding: 0;
-}
+} */
+
 .movie {
   display: flex;
   justify-content: center;
@@ -164,6 +165,51 @@ h2 {
 .movie img {
   display: block;
   max-width: 200px;
+  height: auto;
+  margin: 10px;
+}
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-container {
+  display: flex;
+}
+.swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  flex: 0 0 auto;
+  text-align: center;
+  /* display: flex; */  /* flex를 두번하셨네요 */
+  justify-content: center;
+  align-items: center;
+}
+.swiper-left,
+.swiper-right {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: -160px;
+  display: flex;
+  color: #fff;
+  z-index: 10;
+  cursor: pointer;
+}
+.swiper-left {
+  left: 50%;
+  margin-left: -650px;
+}
+.swiper-right {
+  right: 50%;
+  margin-left: -650px;
   height: 270px;
   margin: 10px;
   border-radius: 20px;
@@ -173,11 +219,11 @@ h2 {
 /* Main */
 .movie-container {
   width: 1400px;
-  height: 100%;
   background-color: black;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-start; 
+  height: 100%;
   align-items: center;
   margin: 100px auto;
   z-index: 9999;
