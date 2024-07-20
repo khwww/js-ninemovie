@@ -193,6 +193,20 @@ h1 {
   width: 150px;
 }
 
+/* 찜버튼 */
+.detail-button {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+#like-button {
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-size: 2em;
+  background-color: transparent;
+}
+
 /* Footer 스타일부분 */
 footer {
   background-color: #000;
