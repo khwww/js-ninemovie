@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NINE MOVIE</title>
+    <link rel="stylesheet" href="detail.css" />
+  </head>
+  <body>
+    <section class="header">
+      <nav class="navbar">
+        <a href="/index.html" class="logo"> NINE MOVIE </a>
+        <div class="menus"></div>
+        <div class="navbar_right">
+          <button
+            class="fas fa-search icon-button search-icon"
+            onclick="openNav()"
+          ></button>
+          <button
+            class="fa fa-heart icon-button favorite-icon"
+            onclick="favoriteIcon()"
+          ></button>
+        </div>
+      </nav>
+      <!-- Search Input 검색 기능 -->
+      <div class="top-menu" id="topnav">
+        <div class="search-box">
+          <div class="inner">
+            <div class="inner-search">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="제목, 인물명을 입력하세요"
+              />
+              <button
+                onclick="getMoviesByKeyword()"
+                class="fas fa-search icon-button search-open-icon"
+                id="myBtn"
+              ></button>
+            </div>
+            <button class="closeBtn" onclick="closeNav()">&times;</button>
+          </div>
+          <!-- Search 내부의 영화리스트 슬라이더 기능 -->
+          <div
+            id="movie-search-board"
+            class="swiper-container movies-container"
+          >
+            <div class="swiper-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main>
+      <section class="content">
+        <div class="left">
+          <h1 id="movieTitle">영화 제목</h1>
+          <div class="details">
+            <span class="age" id="movieRating">평점</span>
+            <span class="time" id="releaseDate">개봉일</span>
+            <span class="category" id="movieCategory">장르</span>
+            <span class="category" id="movieRuntime">런닝타임</span>
+          </div>
+          <button class="watch-button">시청하기</button>
+          <div class="creators">
+            <p id="movieCrew"></p>
+            <!-- 감독정보 -->
+            <p id="movieCast"></p>
+            <!-- 출연진정보 -->
+          </div>
+
+          <p class="description" id="movieOverview"></p>
+          <!-- 영화설명 -->
+        </div>
+
+        <div class="right">
+          <img id="moviePoster" alt="영화 포스터" />
+        </div>
+      </section>
+
+      <section class="similar-movies">
+        <h2>관련 콘텐츠</h2>
+        <div class="slider-container">
+          <!-- <button class="arrow-left" onclick="slideLeft()">&#10094;</button> -->
+          <div class="slider" id="similarMovies">
+            <!-- 관련 콘텐츠 -->
+          </div>
+          <!-- <button class="arrow-right" onclick="slideRight()">&#10095;</button> -->
+        </div>
+      </section>
+      <section class="videos">
+        <h2>관련 영상</h2>
+        <div id="videoResults">
+          <!-- 유튜브 비디오 -->
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-top">
+        <a href="#">고객센터</a>
+        <a href="#">이용약관</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">청소년 보호정책</a>
+        <a href="#">법적고지</a>
+        <a href="#">이벤트</a>
+        <a href="#">인재채용</a>
+        <a href="#">브랜드 바로가기</a>
+        <a href="#">그룹 계열사 바로가기</a>
+      </div>
+      <div class="footer-middle">
+        <p>
+          고객센터 (평일 09시 ~ 17시/점심시간 13시 ~ 14시) | 1:1 게시판 문의 |
+          대표메일:nuna@jc.net | 전화번호:1111-1111<br />
+          NINEMOVIE 시청자 상담실(편성 문의 및 시청자 의견):123-123-1234 |
+          ninenet 고객센터(방송편성문의):3333-3333
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
+          <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
+          <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
+        </div>
+        <p>© 주식회사 누나 All rights reserved</p>
+      </div>
+    </footer>
+    <script src="detail.js"></script>
+  </body>
+</html>
