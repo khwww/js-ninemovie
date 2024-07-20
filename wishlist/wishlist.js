@@ -108,6 +108,8 @@ function categorySearch(event) {
   category = event.target.textContent;
   const wishlist = categoryFilter(category);
 
+  completeEditMode(); // 이전 편집 모드 초기화
+
   wishlistRender(wishlist, category);
 }
 
