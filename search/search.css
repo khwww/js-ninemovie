@@ -146,22 +146,10 @@ a.logo {
 }
 
 /* Movie list */
-<<<<<<< HEAD
 #initial-movie-board {
   display: flex;
   justify-content: center;
 }
-=======
-/* .movies-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  margin-top: 100px;
-  padding: 0;
-} */
->>>>>>> develop
-
 .movie {
   display: flex;
   justify-content: center;
@@ -178,64 +166,18 @@ h2 {
 .movie img {
   display: block;
   max-width: 200px;
-  height: auto;
-  margin: 10px;
-}
-.swiper-container {
-  width: 100%;
-  overflow: hidden;
-}
-.swiper-container {
-  display: flex;
-}
-.swiper-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.swiper-slide {
-  display: flex;
-  flex: 0 0 auto;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.swiper-left,
-.swiper-right {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  top: -160px;
-  display: flex;
-  color: #fff;
-  z-index: 10;
-  cursor: pointer;
-}
-.swiper-left {
-  left: 50%;
-  margin-left: -650px;
-}
-.swiper-right {
-  right: 50%;
-  margin-left: -650px;
   height: 270px;
-  max-width: 200px;
-  border-radius: 20px;
   margin: 10px;
+  border-radius: 20px;
 }
 .swiper-container {
   width: 100%;
   overflow: hidden;
   display: flex;
-}
-.searchSlide {
+  width: 100%;
+  overflow: hidden;
   display: flex;
 }
-
 /* Main */
 .movie-container {
   width: 1400px;
