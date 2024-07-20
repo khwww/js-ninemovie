@@ -172,6 +172,7 @@ h2 {
   max-width: 200px;
   border-radius: 20px;
   margin: 10px;
+  cursor: pointer;
 }
 .swiper-container {
   width: 100%;
@@ -255,7 +256,6 @@ footer {
   height: 24px;
 }
 
-
 /* 20240720 수정 */
 /* 반응형 */
 @media (max-width: 1024px) {
@@ -271,7 +271,7 @@ footer {
   }
   .inner {
     width: 100%;
-    max-width: 100%; 
+    max-width: 100%;
   }
   #search-input {
     font-size: 20px;
@@ -325,7 +325,7 @@ footer {
   }
   .inner {
     width: 100%;
-    max-width: 100%; 
+    max-width: 100%;
   }
   #search-input {
     font-size: 13px;
@@ -350,12 +350,10 @@ footer {
     width: 600px;
     display: flex;
     flex-direction: column;
-
   }
-  #initial-movie-board .movie img{
+  #initial-movie-board .movie img {
     width: 400px;
     height: auto;
-
   }
   #search-input:focus {
     outline: none;
