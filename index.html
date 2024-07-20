@@ -9,18 +9,18 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <!-- Swiper -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
   <!-- icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="./search/search.css" />
-  <link rel="stylesheet" href="recommendation/slide-feature.css" />
+  <link rel="stylesheet" href="./recommendation/slide-feature.css" />
   <title>NINE MOVIE</title>
 </head>
 
 <body>
   <section class="header">
-    <nav class="navbar">
+    <nav class="navbar container">
       <a href="index.html" class="logo"> NINE MOVIE </a>
       <div class="menus">
         <button>영화</button>
@@ -29,7 +29,8 @@
       </div>
       <div class="navbar_right">
         <button class="fas fa-search icon-button search-icon" onclick="openNav()"></button>
-        <button class="fa fa-heart icon-button favorite-icon" onclick="favoriteIcon()"></button>
+        <a href="/wishlist/wishlist.html">
+          <button class="fa fa-heart icon-button favorite-icon" onclick="favoriteIcon()"></button></a>
       </div>
     </nav>
     <!-- Search Input 검색 기능 -->
@@ -47,7 +48,13 @@
         <div id="movie-search-board" class="swiper-container movies-container">
           <div class="swiper-wrapper"></div>
         </div>
+        <button class="closeBtn" onclick="closeNav()">&times;</button>
       </div>
+      <!-- Search 내부의 영화리스트 슬라이더 기능 -->
+      <div id="movie-search-board" class="swiper-container movies-container">
+        <div class="swiper-wrapper"></div>
+      </div>
+    </div>
     </div>
   </section>
   <main>
@@ -56,7 +63,7 @@
 
   <!-- 슬라이드쇼 및 추천 콘텐츠 기능 -->
   <section id="second-section">
-    <div id="popular-img-carousel" class="carousel-window">
+    <div id="popular-img-carousel" class="carousel-window container">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <!-- JavaScript에서 인디케이터가 여기에 추가될 것입니다. -->
@@ -125,62 +132,49 @@
     </div>
   </section>
   <!-- End of 슬라이드쇼 및 추천 콘텐츠 기능 -->
- 
-<footer>
-  <div class="footer-top">
-    <a href="#">고객센터</a>
-    <a href="#">이용약관</a>
-    <a href="#">개인정보처리방침</a>
-    <a href="#">청소년 보호정책</a>
-    <a href="#">법적고지</a>
-    <a href="#">이벤트</a>
-    <a href="#">인재채용</a>
-    <a href="#">브랜드 바로가기</a>
-    <a href="#">그룹 계열사 바로가기</a>
-  </div>
-  <div class="footer-middle">
-    <p>
-      고객센터 (평일 09시 ~ 17시/점심시간 13시 ~ 14시) | 1:1 게시판 문의 |
-      대표메일:nuna@jc.net | 전화번호:1111-1111<br />
-      NINEMOVIE 시청자 상담실(편성 문의 및 시청자 의견):123-123-1234 | ninenet
-      고객센터(방송편성문의):3333-3333
-    </p>
-  </div>
-  <div class="footer-bottom">
-    <div class="social-icons">
-      <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
-      <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
-      <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
+
+  <footer>
+    <div class="footer-top">
+      <a href="#">고객센터</a>
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">청소년 보호정책</a>
+      <a href="#">법적고지</a>
+      <a href="#">이벤트</a>
+      <a href="#">인재채용</a>
+      <a href="#">브랜드 바로가기</a>
+      <a href="#">그룹 계열사 바로가기</a>
     </div>
-    <p>© 주식회사 누나 All rights reserved</p>
-  </div>
-</footer>
-</section>
-<!-- End of 슬라이드쇼 및 추천 콘텐츠 기능 -->
+    <div class="footer-middle">
+      <p>
+        고객센터 (평일 09시 ~ 17시/점심시간 13시 ~ 14시) | 1:1 게시판 문의 |
+        대표메일:nuna@jc.net | 전화번호:1111-1111<br />
+        NINEMOVIE 시청자 상담실(편성 문의 및 시청자 의견):123-123-1234 | ninenet
+        고객센터(방송편성문의):3333-3333
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="#"><img src="../img/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="../img/youtube.png" alt="YouTube" /></a>
+        <a href="#"><img src="../img/twitter.png" alt="Twitter" /></a>
+      </div>
+      <p>© 주식회사 누나 All rights reserved</p>
+    </div>
+  </footer>
+  </section>
+  <!-- End of 슬라이드쇼 및 추천 콘텐츠 기능 -->
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
-  defer></script>
-<script src="./search/search.js" defer></script>
-<script src="./recommendation/recommendation.js" defer></script>
-<script>
-  function navigateToDetail(movieId) {
-    window.location.href = `/detail/detail.html?id=${movieId}`;
-  }
-</script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+    defer></script>
+  <script src="./search/search.js" defer></script>
+  <script src="./recommendation/recommendation.js" defer></script>
+  <script>
+    function navigateToDetail(movieId) {
+      window.location.href = `/detail/detail.html?id=${movieId}`;
+    }
+  </script>
 </body>
-
-
-
 </html>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
-defer></script>
-<script src="./search/search.js" defer></script>
-<script src="recommendation/recommendation.js" defer></script>
-
-</body>

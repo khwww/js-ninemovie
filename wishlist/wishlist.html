@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/globalStyle.css" />
+    <link rel="stylesheet" href="/wishlist/wishlist.css" />
+  </head>
+  <body>
+    <!-- 찜 목록 페이지 -->
+    <div class="container">
+      <!-- TODO: 헤더 -->
+      <a class="wishlist-button" href="/wishlist/wishlist.html">
+        <i class="fa-regular fa-heart default-heart"></i>
+        <i class="fa-solid fa-heart hover-heart"></i>
+      </a>
+      <section class="wishlist-area">
+        <h1 class="h1">찜 목록</h1>
+        <!-- 카테고리 선택, 편집 버튼 -->
+        <div class="wishlist-select-area">
+          <div id="wishlist-category" class="wishlist-select-list">
+            <button class="active">시리즈</button>
+            <button>영화</button>
+          </div>
+          <div id="wishlist-edit-area">
+            <button id="wishlist-edit-button" class="wishlist-select-button">
+              편집
+            </button>
+            <div id="wishlist-edit-inner">
+              <div class="wishlist-select-list">
+                <button id="select-all-button">전체선택</button>
+                <button id="wishlist-delete-button">삭제(0)</button>
+              </div>
+              <button
+                id="wishlist-complete-button"
+                class="wishlist-select-button"
+              >
+                완료
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 찜 목록 -->
+        <ul id="wishlist">
+          <!-- 찜한 영화 리스트 -->
+        </ul>
+        <div id="emptyWishlist">
+          <div class="emptyWishlist-icon">
+            <i class="fa-solid fa-exclamation"></i>
+          </div>
+          <p id="emptyWishlist-content">찜한 영화가 없습니다.</p>
+        </div>
+      </section>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/wishlist/wishlist.js"></script>
+  </body>
+</html>

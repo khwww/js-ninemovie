@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NINE MOVIE</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="detail.css" />
   </head>
   <body>
@@ -16,10 +23,12 @@
             class="fas fa-search icon-button search-icon"
             onclick="openNav()"
           ></button>
-          <button
-            class="fa fa-heart icon-button favorite-icon"
-            onclick="favoriteIcon()"
-          ></button>
+          <a href="/wishlist/wishlist.html">
+            <button
+              class="fa fa-heart icon-button favorite-icon"
+              onclick="favoriteIcon()"
+            ></button>
+          </a>
         </div>
       </nav>
       <!-- Search Input 검색 기능 -->
@@ -60,7 +69,12 @@
             <span class="category" id="movieCategory">장르</span>
             <span class="category" id="movieRuntime">런닝타임</span>
           </div>
-          <button class="watch-button">시청하기</button>
+          <div class="detail-button">
+            <button class="watch-button">시청하기</button>
+            <div id="like-button-area">
+              <!-- 찜 버튼 -->
+            </div>
+          </div>
           <div class="creators">
             <p id="movieCrew"></p>
             <!-- 감독정보 -->
