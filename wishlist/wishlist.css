@@ -151,3 +151,27 @@
 .wishlist-item:hover .wishlist-item-info {
   color: white;
 }
+
+#emptyWishlist {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 2em 0;
+}
+#emptyWishlist .emptyWishlist-icon {
+  display: flex;
+  width: 2em;
+  height: 2em;
+  font-size: 1.8rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+#emptyWishlist-content {
+  font-size: 1.4rem;
+}

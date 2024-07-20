@@ -46,7 +46,7 @@ const saveWishlist = (wishlist) => {
 };
 
 // 찜 리스트 렌더링
-const wishlistRender = (wishlist) => {
+const wishlistRender = (wishlist, category) => {
   console.log("wishlistRender", wishlist);
 
   if (wishlist.length > 0) {
@@ -77,6 +77,13 @@ const wishlistRender = (wishlist) => {
       .join("");
 
     document.getElementById("wishlist").innerHTML = wishlistHTML;
+    document.getElementById("emptyWishlist").style.display = "none";
+  } else {
+    document.getElementById("wishlist").innerHTML = "";
+    document.getElementById("emptyWishlist").style.display = "flex";
+    document.getElementById(
+      "emptyWishlist-content"
+    ).textContent = `찜한 ${category}가 없습니다.`;
   }
 };
 
@@ -84,8 +91,7 @@ const wishlistRender = (wishlist) => {
 const initializeView = (category) => {
   console.log(category);
   const wishlist = categoryFilter(category);
-  console.log(wishlist);
-  wishlistRender(wishlist);
+  wishlistRender(wishlist, category);
 };
 
 initializeView(category);
@@ -100,7 +106,7 @@ function categorySearch(event) {
   category = event.target.textContent;
   const wishlist = categoryFilter(category);
 
-  wishlistRender(wishlist);
+  wishlistRender(wishlist, category);
 }
 
 // 카테고리별 필터링
