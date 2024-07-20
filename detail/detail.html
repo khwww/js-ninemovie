@@ -25,8 +25,13 @@
   <body>
     <section class="header">
       <nav class="navbar">
-        <a href="/index.html" class="logo"> NINE MOVIE </a>
-
+        <div class="navbar_left">
+          <button
+            class="fas fa-arrow-left icon-button back-icon"
+            onclick="goBack()"
+          ></button>
+          <a href="/index.html" class="logo"> NINE MOVIE </a>
+        </div>
         <div class="navbar_right">
           <button
             class="fas fa-search icon-button search-icon"
@@ -103,11 +108,11 @@
       <section class="similar-movies">
         <h2>관련 콘텐츠</h2>
         <div class="slider-container">
-          <!-- <button class="arrow-left" onclick="slideLeft()">&#10094;</button> -->
+          <button class="arrow-left" onclick="slideLeft()">&#10094;</button>
           <div class="slider" id="similarMovies">
             <!-- 관련 콘텐츠 -->
           </div>
-          <!-- <button class="arrow-right" onclick="slideRight()">&#10095;</button> -->
+          <button class="arrow-right" onclick="slideRight()">&#10095;</button>
         </div>
       </section>
       <section class="videos">
@@ -148,5 +153,10 @@
     </footer>
     <script src="../search/search.js" defer></script>
     <script src="detail.js"></script>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
   </body>
 </html>

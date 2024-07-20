@@ -173,11 +173,15 @@ function displayVideos(items) {
 
 let currentPosition = 0;
 const slideWidth = 220; // 포스터 너비 + 마진
-const visibleSlides = 5;
+const visibleSlides = 6;
 
 function slideLeft() {
   const slider = document.getElementById("similarMovies");
-  currentPosition = Math.min(currentPosition + slideWidth * visibleSlides, 0);
+  const maxPosition = 0;
+  currentPosition = Math.min(
+    currentPosition + slideWidth * visibleSlides,
+    maxPosition
+  );
   slider.style.transform = `translateX(${currentPosition}px)`;
 }
 
