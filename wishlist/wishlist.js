@@ -78,12 +78,14 @@ const wishlistRender = (wishlist, category) => {
 
     document.getElementById("wishlist").innerHTML = wishlistHTML;
     document.getElementById("emptyWishlist").style.display = "none";
+    editButton.style.display = "block";
   } else {
     document.getElementById("wishlist").innerHTML = "";
     document.getElementById("emptyWishlist").style.display = "flex";
     document.getElementById(
       "emptyWishlist-content"
     ).textContent = `찜한 ${category}가 없습니다.`;
+    editButton.style.display = "none";
   }
 };
 
