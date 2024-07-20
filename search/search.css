@@ -308,10 +308,14 @@ footer {
     font-size: 1em;
   }
   .navbar .menus button {
-    font-size: 15px
+    font-size: 12px;
   }
   .navbar_right {
     justify-content: flex-end;
+  }
+  .navbar_right .search-icon,
+  .navbar_right .favorite-icon {
+    font-size: 12px;
   }
   .top-menu .search-box {
     position: relative;
