@@ -20,7 +20,7 @@
 
 <body>
   <section class="header">
-    <nav class="navbar container">
+    <nav class="navbar">
       <a href="index.html" class="logo"> NINE MOVIE </a>
       <div class="menus">
         <button>영화</button>
@@ -28,9 +28,16 @@
         <button>최신</button>
       </div>
       <div class="navbar_right">
-        <button class="fas fa-search icon-button search-icon" onclick="openNav()"></button>
+        <button
+          class="fas fa-search icon-button search-icon"
+          onclick="openNav()"
+        ></button>
         <a href="/wishlist/wishlist.html">
-          <button class="fa fa-heart icon-button favorite-icon" onclick="favoriteIcon()"></button></a>
+          <button
+            class="fa fa-heart icon-button favorite-icon"
+            onclick="favoriteIcon()"
+          ></button
+        ></a>
       </div>
     </nav>
     <!-- Search Input 검색 기능 -->
@@ -38,27 +45,36 @@
       <div class="search-box">
         <div class="inner">
           <div class="inner-search">
-            <input type="text" id="search-input" placeholder="제목, 인물명을 입력하세요" />
-            <button onclick="getMoviesByKeyword()" class="fas fa-search icon-button search-open-icon"
-              id="myBtn"></button>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="제목, 인물명을 입력하세요"
+            />
+            <button
+              onclick="getMoviesByKeyword()"
+              class="fas fa-search icon-button search-open-icon"
+              id="myBtn"
+            ></button>
           </div>
           <button class="closeBtn" onclick="closeNav()">&times;</button>
         </div>
+        <!-- 20240720 수정 -->
         <!-- Search 내부의 영화리스트 슬라이더 기능 -->
         <div id="movie-search-board" class="swiper-container movies-container">
-          <div class="swiper-wrapper"></div>
+          <div class="swiper-wrapper">
+          </div>
         </div>
-        <button class="closeBtn" onclick="closeNav()">&times;</button>
       </div>
-      <!-- Search 내부의 영화리스트 슬라이더 기능 -->
-      <div id="movie-search-board" class="swiper-container movies-container">
-        <div class="swiper-wrapper"></div>
-      </div>
-    </div>
     </div>
   </section>
+  <!-- 20240720 수정 -->
   <main>
-    <div id="initial-movie-board" class="movie-container"></div>
+    <div id="initial-movie-board" class="movie-container container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+    </div>
   </main>
 
   <!-- 슬라이드쇼 및 추천 콘텐츠 기능 -->
@@ -131,7 +147,7 @@
       </div>
     </div>
   </section>
-  <!-- End of 슬라이드쇼 및 추천 콘텐츠 기능 -->
+  
 
   <footer>
     <div class="footer-top">
