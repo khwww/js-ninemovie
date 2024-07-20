@@ -54,7 +54,7 @@ const wishlistRender = (wishlist, category) => {
       .map(
         (movie) => `
         <li id="${movie.id}" class="wishlist-item" onclick="selectWishlist(event, ${movie.id})">
-          <a href="../detail/detail.html">
+          <a href="../detail/detail.html?id=${movie.id}">
             <div class="wishlist-item-thumbnail">
               <div class="wishlist-item-img">
                 <img
