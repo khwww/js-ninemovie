@@ -1,6 +1,9 @@
+const urlParams = new URLSearchParams(window.location.search);
+const movieId = urlParams.get("id");
+
 const detail_apiKey = "4e4f177acb805afedb5f5f64d33de73d";
 const youtubeApiKey = "AIzaSyCQKzBO4AtZ0_Fk7ViMJYWp1Ci2qzoQ8P4";
-const movieId = 557;
+// const movieId = 557;
 
 async function fetchMovieDetails() {
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${detail_apiKey}&language=ko-KR`;
