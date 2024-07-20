@@ -188,13 +188,11 @@ function selectAllWishlist(event) {
 // 찜 리스트 선택하기
 const selectWishlist = (event, movieId) => {
   if (isEditMode === true) {
-    console.log(event.target);
-    const checkbox = event.target.querySelector("#wishlist-checkbox");
+    console.log(event.currentTarget);
+    const checkbox = event.currentTarget.querySelector("#wishlist-checkbox");
 
     if (!checkbox.classList.contains("selected")) {
-      event.target
-        .querySelector("#wishlist-checkbox")
-        .classList.add("selected");
+      checkbox.classList.add("selected");
 
       selectedListId.push(movieId);
       console.log(selectedListId);
@@ -202,9 +200,7 @@ const selectWishlist = (event, movieId) => {
       selectedMoviesCount++;
       deleteButton.textContent = `삭제(${selectedMoviesCount})`;
     } else {
-      event.target
-        .querySelector("#wishlist-checkbox")
-        .classList.remove("selected");
+      checkbox.classList.remove("selected");
 
       selectedListId = selectedListId.filter((num) => num !== movieId);
       console.log(selectedListId);
