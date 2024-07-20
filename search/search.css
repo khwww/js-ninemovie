@@ -1,0 +1,239 @@
+/* Navbar */
+.header {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 10; 
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1400px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: rgb(207, 7, 7);
+  font-size: 25px;
+  font-weight: 800;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.navbar .menus {
+  display: flex;
+  gap: 10px;
+}
+.navbar .menus button {
+  display: flex;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+.navbar_right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  padding-right: 17px;
+}
+.navbar_right .search-icon {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.navbar_right .favorite-icon {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+/* Top-menu */
+.top-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20; /* Ensure top-menu stays on top of the header and other content */
+}
+/* Search-box */
+.top-menu .search-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 60px;
+  width: 100%;
+  height: 800px;
+  background-color: black;
+  flex-direction: column;
+}
+.search-box .inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1100px;
+  height: 100px;
+  background-color: black;
+  margin: 0 auto;
+}
+.top-menu.open {
+  display: block;
+}
+.closeBtn {
+  position: absolute;
+  background-color: black;
+  color: #fff;
+  top: 5px;
+  right: 10px;
+  font-size: 35px;
+  font-weight: 700;
+  border: none;
+}
+.inner-search {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+#search-input {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  background-color: black;
+  border-bottom: 2px solid #fff;
+}
+.inner-search .search-icon {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* inner 돋보기 */
+.search-open-icon {
+  background-color: black;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+/* Movie list */
+/* .movies-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 100px;
+  padding: 0;
+} */
+
+.movie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+h2 {
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+.movie img {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin: 10px;
+}
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-container {
+  display: flex;
+}
+.swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  flex: 0 0 auto;
+  text-align: center;
+  /* display: flex; */  /* flex를 두번하셨네요 */
+  justify-content: center;
+  align-items: center;
+}
+.swiper-left,
+.swiper-right {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: -160px;
+  display: flex;
+  color: #fff;
+  z-index: 10;
+  cursor: pointer;
+}
+.swiper-left {
+  left: 50%;
+  margin-left: -650px;
+}
+.swiper-right {
+  right: 50%;
+  margin-left: -650px;
+  height: 270px;
+  margin: 10px;
+  border-radius: 20px;
+  transition: all 1s ease-in-out;
+}
+
+/* Main */
+.movie-container {
+  width: 1400px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+  height: 100%;
+  align-items: center;
+  margin: 100px auto;
+  z-index: 9999;
+}
+.movie-container img {
+  width: auto;
+  margin-bottom: 30px;
+  height: 300px;
+  object-fit: cover;
+}
+.hidden {
+  display: none;
+}
