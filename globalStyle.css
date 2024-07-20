@@ -1,0 +1,28 @@
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  color: white;
+  background-color: black;
+}

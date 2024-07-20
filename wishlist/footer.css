@@ -1,0 +1,50 @@
+/* Footer 스타일부분 */
+footer {
+  background-color: #000;
+  color: #888;
+  padding: 20px;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-top a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-top a:hover {
+  color: #fff; /* 마우스를 올릴 때 글자색을 흰색으로 변경 */
+}
+
+.footer-middle {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
