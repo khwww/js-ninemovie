@@ -11,11 +11,9 @@
       crossorigin="anonymous"
     />
     <!-- Swiper -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <!-- icon -->
     <link
       rel="stylesheet"
@@ -70,18 +68,23 @@
             </div>
             <button class="closeBtn" onclick="closeNav()">&times;</button>
           </div>
+          <!-- 20240720 수정 -->
           <!-- Search 내부의 영화리스트 슬라이더 기능 -->
-          <div
-            id="movie-search-board"
-            class="swiper-container movies-container"
-          >
-            <div class="swiper-wrapper"></div>
+          <div id="movie-search-board" class="swiper-container movies-container">
+            <div class="swiper-wrapper">
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- 20240720 수정 -->
     <main>
-      <div id="initial-movie-board" class="movie-container"></div>
+      <div id="initial-movie-board" class="movie-container container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+      </div>
     </main>
 
     <!-- 슬라이드쇼 및 추천 콘텐츠 기능 -->
