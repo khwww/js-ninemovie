@@ -100,7 +100,8 @@ async function fetchSimilarMovies(movieId) {
     const response = await fetch(url);
     const data = await response.json();
     console.log("Similar Movies API response:", data); // 로그 추가
-    displaySimilarMovies(data.results);
+    const limitedResults = data.results.slice(0, 6);
+    displaySimilarMovies(limitedResults);
   } catch (error) {
     console.error("Error fetching similar movies:", error);
   }
@@ -120,9 +121,14 @@ function displaySimilarMovies(movies) {
     movieElement.classList.add("similar-movie");
 
     movieElement.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
+      <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}"
+      data-id="${movie.id}">
 
     `;
+
+    movieElement.addEventListener("click", () => {
+      window.location.href = `detail.html?id=${movie.id}`;
+    });
 
     similarMoviesContainer.appendChild(movieElement);
   });
