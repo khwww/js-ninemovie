@@ -62,6 +62,7 @@ body {
 
 .movie-list-container h1 {
   color: white;
+  font-size: 1.2rem;
 }
 
 .movie-list-wrapper {
@@ -104,7 +105,7 @@ body {
 }
 
 .arrow-left {
-  font-size: 120px;
+  font-size: 100px;
   position: absolute;
   top: 50px;
   left: 0;
@@ -115,7 +116,7 @@ body {
 }
 
 .arrow-right {
-  font-size: 120px;
+  font-size: 100px;
   position: absolute;
   top: 50px;
   right: 0;
