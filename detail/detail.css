@@ -135,7 +135,6 @@ h1 {
 }
 
 #videoResults,
-#similarMovies,
 #movieReviews,
 #castList {
   display: flex;
@@ -155,6 +154,35 @@ h1 {
 .cast-member {
   display: inline-block;
   text-align: center;
+}
+
+.similar-movie-list {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+  position: relative;
+}
+
+.similar-movie-item {
+  margin-right: 30px;
+  position: relative;
+  transition: transform 1s ease;
+}
+
+.similar-movie-item:hover .similar-movie-item-img {
+  position: relative;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.similar-movie-item-img {
+  transition: all 1s ease-in-out;
+  width: 200px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .similar-movie:hover {
@@ -381,47 +409,6 @@ footer {
   }
 }
 
-/* 슬라이드 스타일 */
-.slider-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
-}
-
-.similar-movie {
-  flex: 0 0 auto;
-  width: 200px;
-  margin-right: 20px;
-}
-
-.arrow-left,
-.arrow-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.arrow-left {
-  left: 10px;
-}
-
-.arrow-right {
-  right: 10px;
-}
-
 @media (max-width: 600px) {
   .similar-movie {
     width: 150px;
@@ -588,4 +575,43 @@ footer {
   border: none;
   font-size: 20px;
   margin-left: 10px;
+}
+
+/* 슬라이드 스타일 */
+.swiper-container {
+  width: 100%;
+  height: 300px;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 200px;
+  height: 300px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white; /* 화살표 색상 */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 27px;
+  height: 44px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

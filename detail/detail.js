@@ -3,7 +3,6 @@ const movieId = urlParams.get("id");
 
 const detail_apiKey = "4e4f177acb805afedb5f5f64d33de73d";
 const youtubeApiKey = "AIzaSyCQKzBO4AtZ0_Fk7ViMJYWp1Ci2qzoQ8P4";
-// const movieId = 557;
 
 async function fetchMovieDetails() {
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${detail_apiKey}&language=ko-KR`;
@@ -100,8 +99,7 @@ async function fetchSimilarMovies(movieId) {
     const response = await fetch(url);
     const data = await response.json();
     console.log("Similar Movies API response:", data); // 로그 추가
-    const limitedResults = data.results.slice(0, 6);
-    displaySimilarMovies(limitedResults);
+    displaySimilarMovies(data.results);
   } catch (error) {
     console.error("Error fetching similar movies:", error);
   }
@@ -118,12 +116,10 @@ function displaySimilarMovies(movies) {
 
   movies.forEach((movie) => {
     const movieElement = document.createElement("div");
-    movieElement.classList.add("similar-movie");
+    movieElement.classList.add("swiper-slide");
 
     movieElement.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}"
-      data-id="${movie.id}">
-
+      <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}" data-id="${movie.id}">
     `;
 
     movieElement.addEventListener("click", () => {
@@ -131,6 +127,47 @@ function displaySimilarMovies(movies) {
     });
 
     similarMoviesContainer.appendChild(movieElement);
+  });
+
+  // Swiper 초기화
+  new Swiper(".swiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+<<<<<<< HEAD
+    slidesPerView: 6,
+=======
+    slidesPerView: 3,
+>>>>>>> bfeb938b1bc9dfbfa03db99f20dbbeefc75ba6de
+    spaceBetween: 5,
+    loop: false,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      480: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+      1280: {
+        slidesPerView: 6,
+        spaceBetween: 10,
+      },
+    },
   });
 }
 
@@ -171,31 +208,9 @@ function displayVideos(items) {
   });
 }
 
-let currentPosition = 0;
-const slideWidth = 220; // 포스터 너비 + 마진
-const visibleSlides = 6;
-
-function slideLeft() {
-  const slider = document.getElementById("similarMovies");
-  const maxPosition = 0;
-  currentPosition = Math.min(
-    currentPosition + slideWidth * visibleSlides,
-    maxPosition
-  );
-  slider.style.transform = `translateX(${currentPosition}px)`;
-}
-
-function slideRight() {
-  const slider = document.getElementById("similarMovies");
-  const maxPosition = -(slider.scrollWidth - slider.clientWidth);
-  currentPosition = Math.max(
-    currentPosition - slideWidth * visibleSlides,
-    maxPosition
-  );
-  slider.style.transform = `translateX(${currentPosition}px)`;
-}
-
-fetchMovieDetails();
+document.addEventListener("DOMContentLoaded", function () {
+  fetchMovieDetails();
+});
 
 /**
  * 찜하기
