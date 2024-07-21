@@ -135,7 +135,6 @@ h1 {
 }
 
 #videoResults,
-#similarMovies,
 #movieReviews,
 #castList {
   display: flex;
@@ -591,7 +590,7 @@ footer {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
