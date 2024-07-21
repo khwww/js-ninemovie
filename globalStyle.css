@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
 /* 초기화 */
 * {
   margin: 0;
@@ -23,6 +25,10 @@ button {
 }
 
 body {
+  font-family: "Noto Sans KR", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   color: white;
   background-color: black;
 }

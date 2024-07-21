@@ -23,7 +23,7 @@
 }
 
 /* 찜 목록 - 제목 */
-.wishlist-area h1 {
+.wishlist-area h3 {
   padding-bottom: 1rem;
   border-bottom: 1px solid rgb(46, 46, 46);
 }
@@ -106,6 +106,17 @@
 }
 .wishlist-item-thumbnail {
   position: relative;
+  aspect-ratio: 2 / 2.8;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: aliceblue;
+}
+.wishlist-item-img img {
+  /* width: 200px; */
+  /* height: 270px; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #wishlist-edit-mode {
   display: none;
@@ -146,6 +157,13 @@
   color: hsla(0, 0%, 100%, 0.87);
   font-size: 0.9rem;
 }
+.wishlist-item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  margin-bottom: 1.6rem;
+}
 .wishlist-item:hover {
   transform: translateY(-10px);
 }
@@ -175,4 +193,44 @@
 }
 #emptyWishlist-content {
   font-size: 1.4rem;
+}
+
+@media (max-width: 1440px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 19.2%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 24.25%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 32.6%;
+  }
+}
+
+@media (max-width: 425px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 49.5%;
+  }
 }
