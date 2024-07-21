@@ -1,0 +1,375 @@
+/* Navbar */
+.header {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1400px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+}
+a.logo {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* height: 40px; */
+  color: rgb(207, 7, 7);
+  font-weight: 900;
+  text-decoration: none;
+  margin-top: 3px;
+  padding-left: 17px;
+  font-size: 30px;
+  line-height: 30px;
+  /* background-color: #fff; */
+}
+.navbar .menus {
+  display: flex;
+  gap: 1.6em;
+}
+.navbar .menus button {
+  display: flex;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+.navbar_right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  padding-right: 17px;
+}
+.navbar_right .search-icon {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.navbar_right .favorite-icon {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+/* Top-menu */
+.top-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20; /* Ensure top-menu stays on top of the header and other content */
+}
+/* Search-box */
+.top-menu .search-box {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  flex-direction: column;
+}
+.search-box .inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  margin: 0 auto;
+}
+.top-menu.open {
+  display: block;
+}
+.closeBtn {
+  position: absolute;
+  background-color: black;
+  color: #fff;
+  top: -180px;
+  right: 10px;
+  font-size: 35px;
+  font-weight: 700;
+  border: none;
+}
+.inner-search {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+#search-input {
+  width: 100%;
+  display: flex;
+  /* flex: 1; */
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  background-color: black;
+  border-bottom: 2px solid #fff;
+}
+#search-input:focus {
+  outline: none;
+  background-color: black;
+}
+
+.inner-search .search-icon {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* inner 돋보기 */
+.search-open-icon {
+  background-color: black;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+/* Movie list */
+#initial-movie-board {
+  display: flex;
+  justify-content: center;
+}
+
+.movie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+h2 {
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+.movie img {
+  display: block;
+  height: 270px;
+  max-width: 200px;
+  border-radius: 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+/* 검색창 슬라이드 */
+#movie-search-board {
+  margin-top: 3em;
+  padding: 0 20px;
+}
+.swiper-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.searchSlide {
+  display: flex;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}
+
+/* Main */
+.movie-container {
+  width: 1400px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
+  margin: 100px auto;
+  z-index: 9999;
+}
+.movie-container img {
+  width: auto;
+  margin-bottom: 30px;
+  height: 300px;
+  object-fit: cover;
+}
+.hidden {
+  display: none;
+}
+
+/* Footer 스타일부분 */
+footer {
+  background-color: #000;
+  color: #888;
+  padding: 20px;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-top a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-top a:hover {
+  color: #fff; /* 마우스를 올릴 때 글자색을 흰색으로 변경 */
+}
+
+.footer-middle {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+/* 20240720 수정 */
+/* 반응형 */
+@media (max-width: 1024px) {
+  .top-menu {
+    width: 600;
+    height: 100%;
+  }
+  .top-menu .search-box {
+    /* position: relative; */
+    /* height: 600px; */
+    width: 100%;
+    padding: 5px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 100%;
+  }
+  #search-input {
+    font-size: 20px;
+    margin-left: 0;
+  }
+  .inner-search {
+    /* width: 600px; */
+    margin-bottom: 50px;
+  }
+  .closeBtn {
+    position: absolute;
+    top: -100px;
+    right: 100px;
+  }
+  #initial-movie-board {
+    display: flex;
+    justify-content: center;
+  }
+  #search-input:focus {
+    outline: none;
+    background-color: black;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 600px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+  }
+  a.logo {
+    font-size: 1em;
+  }
+  .navbar .menus button {
+    font-size: 12px;
+  }
+  .navbar_right {
+    justify-content: flex-end;
+  }
+  .navbar_right .search-icon,
+  .navbar_right .favorite-icon {
+    font-size: 12px;
+  }
+  .top-menu .search-box {
+    /* position: relative;
+    height: 600px; */
+    width: 100%;
+    padding: 5px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 100%;
+  }
+  #search-input {
+    font-size: 13px;
+  }
+  .inner-search {
+    width: 80%;
+    margin-bottom: 50px;
+  }
+  .closeBtn {
+    position: absolute;
+    top: -100px;
+    right: 50px;
+  }
+  #initial-movie-board {
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    overflow: hidden;
+  }
+  #initial-movie-board .movie {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+  #initial-movie-board .movie img {
+    width: 400px;
+    height: auto;
+  }
+  #search-input:focus {
+    outline: none;
+    background-color: black;
+  }
+}

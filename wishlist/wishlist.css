@@ -1,0 +1,236 @@
+/* 찜 목록 버튼 */
+.wishlist-button {
+  color: white;
+}
+.wishlist-button .hover-heart {
+  display: none;
+}
+
+.wishlist-button:hover .hover-heart {
+  display: inline;
+}
+.wishlist-button:hover .default-heart {
+  display: none;
+}
+
+/* 찜 목록 */
+.wishlist-area {
+  min-height: 70vh;
+  padding: 6em 0 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* 찜 목록 - 제목 */
+.wishlist-area h3 {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(46, 46, 46);
+}
+
+/* 카테고리 선택, 편집 버튼 */
+.wishlist-select-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-select-list {
+  display: flex;
+  gap: 1em;
+}
+.wishlist-select-list button {
+  position: relative;
+  color: hsla(0, 0%, 100%, 0.5);
+  border: none;
+  background-color: transparent;
+}
+.wishlist-select-list button:hover,
+.wishlist-select-list button.active {
+  color: white;
+}
+.wishlist-select-list button:last-child {
+  padding-left: 1em;
+}
+.wishlist-select-list button:last-child::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 1rem;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.wishlist-select-button {
+  color: hsla(0, 0%, 100%, 0.5);
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  border-radius: 3px;
+  border: 1px solid rgb(78, 78, 78);
+  background-color: transparent;
+}
+.wishlist-select-button:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+#wishlist-edit-area {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#wishlist-edit-inner {
+  display: none;
+  gap: 1em;
+  background-color: black;
+}
+
+/* 찜 리스트 */
+#wishlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8%;
+  margin-top: 1em;
+}
+.wishlist-item {
+  width: 16%;
+  transition: transform 0.3s ease;
+}
+.wishlist-item a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.wishlist-item-thumbnail {
+  position: relative;
+  aspect-ratio: 2 / 2.8;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: aliceblue;
+}
+.wishlist-item-img img {
+  /* width: 200px; */
+  /* height: 270px; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#wishlist-edit-mode {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#wishlist-checkbox {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  border: 1.6px solid white;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.7;
+}
+#wishlist-checkbox:hover {
+  opacity: 1;
+}
+#wishlist-checkbox.selected {
+  opacity: 1;
+  color: black;
+  background-color: white;
+}
+
+.wishlist-item-info {
+  color: hsla(0, 0%, 100%, 0.87);
+  font-size: 0.9rem;
+}
+.wishlist-item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  margin-bottom: 1.6rem;
+}
+.wishlist-item:hover {
+  transform: translateY(-10px);
+}
+.wishlist-item:hover .wishlist-item-info {
+  color: white;
+}
+
+#emptyWishlist {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 2em 0;
+}
+#emptyWishlist .emptyWishlist-icon {
+  display: flex;
+  width: 2em;
+  height: 2em;
+  font-size: 1.8rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+#emptyWishlist-content {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 1440px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 19.2%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 24.25%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 32.6%;
+  }
+}
+
+@media (max-width: 425px) {
+  /* 찜 리스트 */
+  #wishlist {
+    gap: 1%;
+  }
+  .wishlist-item {
+    width: 49.5%;
+  }
+}
