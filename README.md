@@ -1,30 +1,109 @@
-9조의 팀 레포지스토리입니다.
+# 🎬 NINE MOVIE
+
+<div align=center>
+<img src="https://github.com/user-attachments/assets/1e92ce1f-1f8e-40d5-ac0a-9d497701f345" alt="NINE MOVIE" width="600px"/>
+        
+### [🍿 NINE MOVIE 바로가기 🍿](https://ninemovie.netlify.app/)
+</div>
+
+<br />
+
+## 스프린트 역할 분배
+
+| 팀원 | 역할 |
+| --- | --- |
+| 김하늘 | Product Owner |
+| 김현우 | Scrum master |
+| 송제혁 | Developers |
+| 이희정 | Developers |
+| 홍성숙 | Developers |
+
+<br />
+
+## 스프린트 주기
+
+- **스프린트 기간**: 24.07.15 ~ 24.07.21 (1주)
+- **일일 스크럼**: 매일 PM 12:00 (10분)
+
+<br />
+
+## Product Backlog
+
+| 팀원 | 담당 기능 |
+| --- | --- |
+| 김하늘 | 사용자 로그인/회원가입 모달 기능 |
+| 이희정 | 콘텐츠 검색 기능 및 결과 표시 |
+| 송제혁 | 슬라이드쇼 및 추천 콘텐츠 기능 |
+| 김현우 | 동영상 플레이어 제어 (재생, 일시정지 등) |
+| 홍성숙 | 즐겨찾기 추가/삭제 기능 및 상태 관리 |
+
+<br />
+
+### 사용 API
+    
+- TMDB API: https://developer.themoviedb.org/docs/getting-started
+- YouTube Data API: https://developers.google.com/youtube/v3/docs?hl=ko
+
+<br />
+
+### 각 기능 세부 사항
+    
+1. **사용자 로그인/회원가입 모달 기능**
+    - 로그인 폼과 회원가입 폼 구현
+    - 폼 유효성 검사 및 오류 메시지 표시
+2. **콘텐츠 검색 기능 및 결과 표시**
+    - 검색 입력 필드와 버튼 구현
+    - API 호출을 통한 검색 결과 표시
+3. **슬라이드쇼 및 추천 콘텐츠 기능**
+    - 슬라이드쇼 구현 (자동/수동 전환)
+    - 추천 콘텐츠 목록 표시
+4. **동영상 플레이어 제어**
+    - 동영상 재생/일시정지/음량 조절 기능
+    - 시간 표시 및 진행 바 업데이트
+5. **즐겨찾기 추가/삭제 기능**
+    - 콘텐츠 즐겨찾기 버튼 구현
+    - 상태 저장 (로컬 스토리지 활용)
+
+<br />
+
+## User Story
+
+1. **사용자 로그인**
+    - 사용자는 계정에 로그인할 수 있어야 한다.
+    - 로그인 시 올바른 사용자명과 비밀번호를 입력해야 한다.
+    - 로그인에 성공하면 메인 페이지로 이동해야 한다.
+2. **회원가입**
+    - 사용자는 새로운 계정을 생성할 수 있어야 한다.
+    - 필수 정보(이름, 이메일, 비밀번호)를 입력해야 한다.
+    - 회원가입 후 자동으로 로그인되어야 한다.
+3. **콘텐츠 검색**
+    - 사용자는 원하는 콘텐츠를 검색할 수 있어야 한다.
+    - 검색어를 입력하고 검색 버튼을 클릭해야 한다.
+    - 검색 결과는 해당 콘텐츠의 리스트로 표시되어야 한다.
+4. **슬라이드쇼 보기**
+    - 사용자는 추천 콘텐츠를 슬라이드쇼 형태로 볼 수 있어야 한다.
+    - 자동으로 넘어가는 슬라이드쇼와 사용자가 제어할 수 있는 버튼이 제공되어야 한다.
+5. **동영상 재생**
+    - 사용자는 선택한 동영상을 재생할 수 있어야 한다.
+    - 재생, 일시정지, 음량 조절 기능이 포함되어야 한다.
+    - 동영상 재생 시간과 진행 바가 표시되어야 한다.
+6. **즐겨찾기 관리**
+    - 사용자는 원하는 콘텐츠를 즐겨찾기에 추가할 수 있어야 한다.
+    - 즐겨찾기 목록에서 콘텐츠를 삭제할 수 있어야 한다.
+    - 즐겨찾기 상태는 로컬 스토리지에 저장되어 다시 접속해도 유지되어야 한다.
+
+### 추가 사항
+
+- 모든 기능은 사용자 편의를 고려하여 직관적이고 쉽게 접근할 수 있어야 한다.
+- 반응형 웹 디자인을 적용하여 다양한 화면 크기에서도 잘 동작해야한다.
+- 사용자 경험을 개선하기 위해 애니메이션과 트랜지션 효과를 적절히 활용할 수 있어야 한다.
 
 
 
 
-<h5>
-// 인기 영화 click event
-const titlePopular = document.querySelector(".popular-title");
-        titlePopular.addEventListener('click', () => )
-
-//지금 상영 영화 click event
-const titleNowPlaying = document.querySelector(".now-playing-title");
-        titleNowPlaying.addEventListener('click', () => )
-
-//트렌드 영화 click event
-const titleTrending = document.querySelector(".trending-title");
-        titleTrending.addEventListener('click', () => )
-
-//개봉예정 영화 click event
-const titleNowPlaying = document.querySelector(".upcoming-title");
-titleNowPlaying.addEventListener('click', () => )
-
-//높은평점 영화 click event
-const titleTrending = document.querySelector(".topRated-title");
-titleTrending.addEventListener('click', () => )
 
 
-//최신영화 부터 높은평점 영화까지 onclick buttom 함수
-// onclick="movie-img-pop()
-</h5>
+
+
+
+
