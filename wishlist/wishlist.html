@@ -29,12 +29,18 @@
     <link rel="stylesheet" href="/search/search.css" />
     <link rel="stylesheet" href="/wishlist/footer.css" />
     <link rel="stylesheet" href="/wishlist/wishlist.css" />
+    <link rel="stylesheet" href="/detail/detail.css" />
   </head>
   <body>
     <section class="header">
       <nav class="navbar">
-        <a href="/index.html" class="logo"> NINE MOVIE </a>
-
+        <div class="navbar_left">
+          <button
+            class="fas fa-arrow-left icon-button back-icon"
+            onclick="goBack()"
+          ></button>
+          <a href="/index.html" class="logo"> NINE MOVIE </a>
+        </div>
         <div class="navbar_right">
           <button
             class="fas fa-search icon-button search-icon"
@@ -153,5 +159,10 @@
     ></script>
     <script src="../search/search.js" defer></script>
     <script src="/wishlist/wishlist.js"></script>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
   </body>
 </html>

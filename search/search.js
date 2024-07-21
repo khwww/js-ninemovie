@@ -66,9 +66,8 @@ const renderInitial = () => {
   const moviesHTML = moviesList
     .map(
       (movies) => ` <div class="movie">
-                      <img src=${
-                        IMG_URL + movies.poster_path
-                      } onclick="navigateToDetail(${movies.id})" alt="${
+                      <img src=${IMG_URL + movies.poster_path}
+                      onclick="navigateToDetail(${movies.id})" alt="${
         movies.title
       }">
                     </div>`
@@ -113,11 +112,10 @@ const render = () => {
     .map(
       (movies) => ` <div class="swiper-wrapper">
                     <div class="swiper-slide_1 movie">
-                      <img src=${
-                        IMG_URL + movies.poster_path
-                      } onclick="navigateToDetail(${movies.id})" alt="${
+                      <img src=${IMG_URL + movies.poster_path}
+                      onclick="navigateToDetail(${movies.id})" alt="${
         movies.title
-      }">
+      }">>
                     </div>
                   </div>`
     )
