@@ -110,18 +110,47 @@ const render = () => {
   const moviesHTML = moviesList
     .filter((movie) => movie.poster_path) //이미지있는 영화만 보이도록 하기
     .map(
-      (movies) => ` <div class="swiper-wrapper">
-                    <div class="swiper-slide_1 movie">
-                      <img src=${IMG_URL + movies.poster_path}
-                      onclick="navigateToDetail(${movies.id})" alt="${
-        movies.title
-      }">>
-                    </div>
-                  </div>`
+      (movies) => `
+        <div class="swiper-slide swiper-slide_1 movie">
+          <img src=${IMG_URL + movies.poster_path} onclick="navigateToDetail(${
+        movies.id
+      })" alt="${movies.title}">
+        </div>`
     )
     .join("");
 
-  document.getElementById("movie-search-board").innerHTML = moviesHTML;
+  document.querySelector("#movie-search-board .swiper-wrapper").innerHTML =
+    moviesHTML;
 };
 
 getMovies();
+
+const swiper = new Swiper("#movie-search-board", {
+  slidesPerView: 1, // 보여줄 갯수
+  spaceBetween: 10, // 간격
+  freeMode: true,
+  // nav 버튼
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  // 반응형
+  breakpoints: {
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 6,
+      spaceBetween: 10,
+    },
+  },
+});
