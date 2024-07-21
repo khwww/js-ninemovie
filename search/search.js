@@ -110,23 +110,12 @@ const render = () => {
   const moviesHTML = moviesList
     .filter((movie) => movie.poster_path) //이미지있는 영화만 보이도록 하기
     .map(
-<<<<<<< HEAD
-      (movies) => ` <div class="swiper-wrapper">
-                    <div class="swiper-slide_1 movie">
-                      <img src=${IMG_URL + movies.poster_path}
-                      onclick="navigateToDetail(${movies.id})" alt="${
-        movies.title
-      }">
-                    </div>
-                  </div>`
-=======
       (movies) => `
         <div class="swiper-slide swiper-slide_1 movie">
           <img src=${IMG_URL + movies.poster_path} onclick="navigateToDetail(${
         movies.id
       })" alt="${movies.title}">
         </div>`
->>>>>>> develop
     )
     .join("");
 
