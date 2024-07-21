@@ -40,7 +40,11 @@ function displayMovieDetails(movie) {
   // 감독 정보 추가
   fetchMovieCredits(movie.id);
 
+<<<<<<< HEAD
   // 영화 제목으로 유튜브 영상 검색(할당량이슈)
+=======
+  // 영화 제목으로 유튜브 영상 검색
+>>>>>>> develop
   // searchYouTube(movie.title);
 
   // 찜하기
