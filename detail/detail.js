@@ -42,7 +42,7 @@ function displayMovieDetails(movie) {
   fetchMovieCredits(movie.id);
 
   // 영화 제목으로 유튜브 영상 검색
-  searchYouTube(movie.title);
+  // searchYouTube(movie.title);
 
   // 찜하기
   displayLike(movie);
