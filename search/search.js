@@ -121,36 +121,47 @@ const render = () => {
 
   document.querySelector("#movie-search-board .swiper-wrapper").innerHTML =
     moviesHTML;
+
+  initializeSwiper(); // 슬라이드 및 네비게이션 버튼 재초기화
 };
 
 getMovies();
 
-const swiper = new Swiper("#movie-search-board", {
-  slidesPerView: 1, // 보여줄 갯수
-  spaceBetween: 10, // 간격
-  freeMode: true,
-  // nav 버튼
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  // 반응형
-  breakpoints: {
-    640: {
-      slidesPerView: 3,
-      spaceBetween: 20,
+let swiper;
+
+function initializeSwiper() {
+  if (swiper) {
+    swiper.destroy(true, true); // 기존 Swiper 인스턴스 제거
+  }
+
+  swiper = new Swiper("#movie-search-board", {
+    slidesPerView: 1, // 보여줄 갯수
+    spaceBetween: 10, // 간격
+    // centeredSlides: true, // 슬라이드를 중앙에 배치
+    freeMode: true, // 자유 모드 활성화
+    // nav 버튼
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 30,
+    // 반응형
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+      },
+      1280: {
+        slidesPerView: 6,
+        spaceBetween: 10,
+      },
     },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 20,
-    },
-    1280: {
-      slidesPerView: 6,
-      spaceBetween: 10,
-    },
-  },
-});
+  });
+}
