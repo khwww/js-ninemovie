@@ -41,7 +41,7 @@ function displayMovieDetails(movie) {
   fetchMovieCredits(movie.id);
 
   // 영화 제목으로 유튜브 영상 검색
-  // searchYouTube(movie.title);
+  searchYouTube(movie.title);
 
   // 찜하기
   displayLike(movie);
@@ -135,11 +135,7 @@ function displaySimilarMovies(movies) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-<<<<<<< HEAD
     slidesPerView: 6,
-=======
-    slidesPerView: 3,
->>>>>>> bfeb938b1bc9dfbfa03db99f20dbbeefc75ba6de
     spaceBetween: 5,
     loop: false,
     breakpoints: {
