@@ -100,8 +100,8 @@ async function fetchSimilarMovies(movieId) {
     const response = await fetch(url);
     const data = await response.json();
     console.log("Similar Movies API response:", data); // 로그 추가
-    const limitedResults = data.results.slice(0, 6);
-    displaySimilarMovies(limitedResults);
+    // const limitedResults = data.results.slice(0, 6);
+    displaySimilarMovies(data.results);
   } catch (error) {
     console.error("Error fetching similar movies:", error);
   }
@@ -133,6 +133,39 @@ function displaySimilarMovies(movies) {
     similarMoviesContainer.appendChild(movieElement);
   });
 }
+
+// 슬라이드 이동 기능 구현
+
+const handleScroll = (direction, listClass) => {
+  const listElement = document.querySelector(listClass);
+  const scrollWidth = listElement.scrollWidth - listElement.clientWidth;
+  const currentScrollAmount = scrollStates[listClass].scrollAmount;
+
+  if (direction === "right" && currentScrollAmount < scrollWidth) {
+    scrollStates[listClass].scrollAmount += 300;
+    console.log("right", scrollStates[listClass].scrollAmount);
+    if (scrollStates[listClass].scrollAmount > scrollWidth) {
+      scrollStates[listClass].scrollAmount = scrollWidth;
+    }
+  } else if (direction === "left" && currentScrollAmount > 0) {
+    scrollStates[listClass].scrollAmount -= 300;
+    console.log("left", scrollStates[listClass].scrollAmount);
+    if (scrollStates[listClass].scrollAmount < 0) {
+      scrollStates[listClass].scrollAmount = 0;
+    }
+  }
+
+  listElement.style.transform = `translateX(-${scrollStates[listClass].scrollAmount}px)`;
+};
+
+document
+  .getElementById("right-arrow-similar")
+  .addEventListener("click", () =>
+    handleScroll("right", ".similar-movie-list")
+  );
+document
+  .getElementById("left-arrow-similar")
+  .addEventListener("click", () => handleScroll("left", ".similar-movie-list"));
 
 // maxResults인자를 통해서 몇 개의 영상을 가져올 것인지를 결정
 async function searchYouTube(query) {
@@ -169,30 +202,6 @@ function displayVideos(items) {
     iframe.allowFullscreen = true;
     videoResults.appendChild(iframe);
   });
-}
-
-let currentPosition = 0;
-const slideWidth = 220; // 포스터 너비 + 마진
-const visibleSlides = 6;
-
-function slideLeft() {
-  const slider = document.getElementById("similarMovies");
-  const maxPosition = 0;
-  currentPosition = Math.min(
-    currentPosition + slideWidth * visibleSlides,
-    maxPosition
-  );
-  slider.style.transform = `translateX(${currentPosition}px)`;
-}
-
-function slideRight() {
-  const slider = document.getElementById("similarMovies");
-  const maxPosition = -(slider.scrollWidth - slider.clientWidth);
-  currentPosition = Math.max(
-    currentPosition - slideWidth * visibleSlides,
-    maxPosition
-  );
-  slider.style.transform = `translateX(${currentPosition}px)`;
 }
 
 fetchMovieDetails();

@@ -115,7 +115,7 @@ const render = () => {
                       <img src=${IMG_URL + movies.poster_path}
                       onclick="navigateToDetail(${movies.id})" alt="${
         movies.title
-      }">>
+      }">
                     </div>
                   </div>`
     )
