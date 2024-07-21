@@ -135,7 +135,6 @@ h1 {
 }
 
 #videoResults,
-#similarMovies,
 #movieReviews,
 #castList {
   display: flex;

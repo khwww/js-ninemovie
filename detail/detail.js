@@ -135,7 +135,7 @@ function displaySimilarMovies(movies) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    slidesPerView: 7,
+    slidesPerView: 3,
     spaceBetween: 5,
     loop: false,
   });
