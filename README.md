@@ -13,10 +13,10 @@
 | 팀원 | 역할 |
 | --- | --- |
 | 김하늘 | Product Owner |
-| 김현우 | Scrum master |
-| 송제혁 | Developers |
-| 이희정 | Developers |
-| 홍성숙 | Developers |
+| [김현우](https://github.com/khwww) | Scrum master |
+| [송제혁](https://github.com/song2805) | Developers |
+| [이희정](https://github.com/victoryalhj) | Developers |
+| [홍성숙](https://github.com/SSUK-H) | Developers |
 
 <br />
 
