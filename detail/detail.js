@@ -3,7 +3,6 @@ const movieId = urlParams.get("id");
 
 const detail_apiKey = "4e4f177acb805afedb5f5f64d33de73d";
 const youtubeApiKey = "AIzaSyCQKzBO4AtZ0_Fk7ViMJYWp1Ci2qzoQ8P4";
-// const movieId = 557;
 
 async function fetchMovieDetails() {
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${detail_apiKey}&language=ko-KR`;
@@ -41,8 +40,8 @@ function displayMovieDetails(movie) {
   // 감독 정보 추가
   fetchMovieCredits(movie.id);
 
-  // 영화 제목으로 유튜브 영상 검색
-  searchYouTube(movie.title);
+  // 영화 제목으로 유튜브 영상 검색(할당량이슈)
+  // searchYouTube(movie.title);
 
   // 찜하기
   displayLike(movie);
@@ -100,7 +99,6 @@ async function fetchSimilarMovies(movieId) {
     const response = await fetch(url);
     const data = await response.json();
     console.log("Similar Movies API response:", data); // 로그 추가
-    // const limitedResults = data.results.slice(0, 6);
     displaySimilarMovies(data.results);
   } catch (error) {
     console.error("Error fetching similar movies:", error);
@@ -118,12 +116,10 @@ function displaySimilarMovies(movies) {
 
   movies.forEach((movie) => {
     const movieElement = document.createElement("div");
-    movieElement.classList.add("similar-movie");
+    movieElement.classList.add("swiper-slide");
 
     movieElement.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}"
-      data-id="${movie.id}">
-
+      <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}" data-id="${movie.id}">
     `;
 
     movieElement.addEventListener("click", () => {
@@ -132,40 +128,18 @@ function displaySimilarMovies(movies) {
 
     similarMoviesContainer.appendChild(movieElement);
   });
+
+  // Swiper 초기화
+  new Swiper(".swiper-container", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    slidesPerView: 7,
+    spaceBetween: 5,
+    loop: false,
+  });
 }
-
-// 슬라이드 이동 기능 구현
-
-const handleScroll = (direction, listClass) => {
-  const listElement = document.querySelector(listClass);
-  const scrollWidth = listElement.scrollWidth - listElement.clientWidth;
-  const currentScrollAmount = scrollStates[listClass].scrollAmount;
-
-  if (direction === "right" && currentScrollAmount < scrollWidth) {
-    scrollStates[listClass].scrollAmount += 300;
-    console.log("right", scrollStates[listClass].scrollAmount);
-    if (scrollStates[listClass].scrollAmount > scrollWidth) {
-      scrollStates[listClass].scrollAmount = scrollWidth;
-    }
-  } else if (direction === "left" && currentScrollAmount > 0) {
-    scrollStates[listClass].scrollAmount -= 300;
-    console.log("left", scrollStates[listClass].scrollAmount);
-    if (scrollStates[listClass].scrollAmount < 0) {
-      scrollStates[listClass].scrollAmount = 0;
-    }
-  }
-
-  listElement.style.transform = `translateX(-${scrollStates[listClass].scrollAmount}px)`;
-};
-
-document
-  .getElementById("right-arrow-similar")
-  .addEventListener("click", () =>
-    handleScroll("right", ".similar-movie-list")
-  );
-document
-  .getElementById("left-arrow-similar")
-  .addEventListener("click", () => handleScroll("left", ".similar-movie-list"));
 
 // maxResults인자를 통해서 몇 개의 영상을 가져올 것인지를 결정
 async function searchYouTube(query) {
@@ -204,7 +178,9 @@ function displayVideos(items) {
   });
 }
 
-fetchMovieDetails();
+document.addEventListener("DOMContentLoaded", function () {
+  fetchMovieDetails();
+});
 
 /**
  * 찜하기

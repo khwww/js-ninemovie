@@ -11,7 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/globalStyle.css" />
     <link rel="stylesheet" href="detail.css" />
     <link rel="stylesheet" href="../search/search.css" />
     <link
@@ -108,12 +107,12 @@
 
       <section class="similar-movies">
         <h2>관련 콘텐츠</h2>
-        <div class="movie-list-wrapper">
-          <span id="left-arrow-similar" class="arrow-left">&lt;</span>
-          <div class="similar-movie-list" id="similarMovies">
+        <div class="slider-container">
+          <button class="arrow-left" onclick="slideLeft()">&#10094;</button>
+          <div class="slider" id="similarMovies">
             <!-- 관련 콘텐츠 -->
           </div>
-          <span id="right-arrow-similar" class="arrow-right">&gt;</span>
+          <button class="arrow-right" onclick="slideRight()">&#10095;</button>
         </div>
       </section>
       <section class="videos">
