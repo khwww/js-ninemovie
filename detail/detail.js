@@ -135,7 +135,11 @@ function displaySimilarMovies(movies) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+<<<<<<< HEAD
     slidesPerView: 6,
+=======
+    slidesPerView: 3,
+>>>>>>> bfeb938b1bc9dfbfa03db99f20dbbeefc75ba6de
     spaceBetween: 5,
     loop: false,
     breakpoints: {
