@@ -17,20 +17,22 @@
   position: relative;
 }
 a.logo {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
-  height: 40px;
+  justify-content: center; */
+  /* height: 40px; */
   color: rgb(207, 7, 7);
-  font-size: 25px;
   font-weight: 900;
   text-decoration: none;
-  margin: 0 10px;
+  margin-top: 3px;
+  padding-left: 17px;
   font-size: 30px;
+  line-height: 30px;
+  /* background-color: #fff; */
 }
 .navbar .menus {
   display: flex;
-  gap: 10px;
+  gap: 1.6em;
 }
 .navbar .menus button {
   display: flex;

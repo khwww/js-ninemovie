@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  /* font-family: "Arial", sans-serif; */
   background-color: rgb(20, 20, 20);
   color: white;
 }
@@ -456,6 +456,7 @@ footer {
 .navbar_left {
   display: flex;
   align-items: center;
+  padding-left: 17px;
 }
 .icon-button {
   background: none;
