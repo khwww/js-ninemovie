@@ -34,7 +34,7 @@
 | 김하늘                                   | 사용자 로그인/회원가입 모달 기능               |
 | [이희정](https://github.com/victoryalhj) | 콘텐츠 검색 기능 및 결과 표시                  |
 | [송제혁](https://github.com/song2805)    | 슬라이드쇼 및 추천 콘텐츠 기능                 |
-| [김현우](https://github.com/khwww)       | 콘텐츠 상세 페이지(관련콘텐츠, 관련유뷰트영상) |
+| [김현우](https://github.com/khwww)       | 콘텐츠 상세 페이지(관련콘텐츠, 관련유튜브영상) |
 | [홍성숙](https://github.com/SSUK-H)      | 즐겨찾기 추가/삭제 기능 및 상태 관리           |
 
 <br />
